@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { ProjectDetail } from '@/components/project-detail';
 import { getProject } from '@/lib/projects';
 
-const project = getProject('voces-que-inspiran')!;
-const nextProject = getProject('expods')!;
+const project = getProject('arca-impulsa-fp')!;
+const nextProject = getProject('voces-que-inspiran')!;
 
 export const metadata: Metadata = {
   title: project.title,
@@ -13,6 +13,6 @@ export const metadata: Metadata = {
   twitter: { card: 'summary', title: `${project.title} | Arrea Eventos`, description: project.summary, images: [] },
 };
 
-export default function VocesQueInspiranPage() {
+export default function ArcaImpulsaFpPage() {
   return <ProjectDetail project={project} nextProject={nextProject} />;
 }

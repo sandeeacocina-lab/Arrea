@@ -158,28 +158,28 @@ export default function Home() {
       <section id="proyectos" className="featured-project section-space">
         <div className="shell project-grid">
           <a
-            href={`${basePath}/proyectos/voces-que-inspiran/`}
+            href={`${basePath}/proyectos/expods/`}
             className="project-poster"
-            aria-label="Consultar el proyecto Voces que inspiran"
+            aria-label="Consultar el proyecto ExpoODS"
           >
-            <span>Voces</span>
-            <strong>que</strong>
-            <span>inspiran</span>
-            <i>2025</i>
+            <span>EXP</span>
+            <strong>los</strong>
+            <span>ODS</span>
+            <i>2030</i>
           </a>
           <div className="project-copy">
-            <p className="eyebrow">Proyecto destacado · 2025</p>
-            <h2>Voces que inspiran</h2>
+            <p className="eyebrow">Proyecto destacado · eTwinning</p>
+            <h2>ExpoODS</h2>
             <p>
-              Una experiencia concebida, coordinada y comunicada por el alumnado: protocolo,
-              atención a participantes, puesta en escena y seguimiento del evento.
+              Una exposición virtual sobre los Objetivos de Desarrollo Sostenible creada y
+              gestionada por el alumnado, con visita 3D y recursos digitales propios.
             </p>
             <dl>
-              <div><dt>Formato</dt><dd>Jornada educativa</dd></div>
-              <div><dt>Equipo</dt><dd>Asistencia a la Dirección</dd></div>
-              <div><dt>Lugar</dt><dd>IES Arca Real</dd></div>
+              <div><dt>Formato</dt><dd>Exposición digital</dd></div>
+              <div><dt>Marco</dt><dd>eTwinning SustainABLE</dd></div>
+              <div><dt>Alcance</dt><dd>Colaboración europea</dd></div>
             </dl>
-            <a href={`${basePath}/proyectos/voces-que-inspiran/`} className="project-link">Consultar el proyecto</a>
+            <a href={`${basePath}/proyectos/expods/`} className="project-link">Consultar el proyecto</a>
           </div>
         </div>
       </section>
@@ -190,17 +190,23 @@ export default function Home() {
           <h2 id="archive-title">Proyectos que construyen <em>experiencia de verdad.</em></h2>
         </div>
         <div className="archive-grid">
-          <a href={`${basePath}/proyectos/voces-que-inspiran/`} className="archive-card archive-card-primary">
+          <a href={`${basePath}/proyectos/feria-arcadeca-2022/`} className="archive-card archive-card-primary">
+            <p>2022 · Feria híbrida</p>
+            <h3>Feria ARCADECA</h3>
+            <span>Entorno virtual · Intercentros · Comunicación</span>
+          </a>
+          <a href={`${basePath}/proyectos/arca-impulsa-fp/`} className="archive-card archive-card-light">
+            <p>2023–2026 · Jornadas de FP</p>
+            <h3>Arca Impulsa FP</h3>
+            <span>Orientación · Talleres · Experiencia de visita</span>
+          </a>
+          <a href={`${basePath}/proyectos/voces-que-inspiran/`} className="archive-card archive-card-ink">
             <p>2025 · Jornada educativa</p>
             <h3>Voces que inspiran</h3>
             <span>Protocolo · Producción · Comunicación</span>
           </a>
-          <a href={`${basePath}/proyectos/feria-arcadeca-2022/`} className="archive-card archive-card-light">
-            <p>2022 · Feria educativa</p>
-            <h3>Feria ARCADECA</h3>
-            <span>Secretaría técnica · Atención · Difusión</span>
-          </a>
         </div>
+        <a href={`${basePath}/proyectos/`} className="text-action archive-all-link">Ver el archivo completo</a>
       </section>
 
       <section id="aula" className="learning-section section-space" aria-labelledby="learning-title">

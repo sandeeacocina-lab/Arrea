@@ -4,7 +4,7 @@ import { ProjectDetail } from '@/components/project-detail';
 import { getProject } from '@/lib/projects';
 
 const project = getProject('feria-arcadeca-2022')!;
-const nextProject = getProject('voces-que-inspiran')!;
+const nextProject = getProject('arca-impulsa-fp')!;
 
 export const metadata: Metadata = {
   title: project.title,

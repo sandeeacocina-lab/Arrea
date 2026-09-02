@@ -14,23 +14,25 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
       <SiteHeader />
       <main id="contenido">
-        <header className="shell project-masthead">
-          <nav aria-label="Ruta de navegación">
-            <a href={`${basePath}/proyectos/`}>Proyectos</a>
-            <span>/</span>
-            <span>{project.title}</span>
-          </nav>
-
-          <div className="project-masthead-grid">
-            <p className="project-record">{project.code}</p>
-            <div>
-              <p className="project-category">{project.year} · {project.category}</p>
+        <header className="project-detail-hero">
+          <div className="shell project-breadcrumb">
+            <a href={`${basePath}/proyectos/`}>Todos los proyectos</a>
+            <span>{project.code}</span>
+          </div>
+          <div className="shell project-detail-hero-grid">
+            <div className="project-detail-copy">
+              <p className="eyebrow">{project.status} · {project.year}</p>
               <h1>{project.title}</h1>
-              <p className="project-lead">{project.summary}</p>
+              <p>{project.summary}</p>
+            </div>
+            <div className={`detail-poster detail-poster-${project.theme}`} aria-hidden="true">
+              <span>{project.poster.top}</span>
+              {project.poster.script && <strong>{project.poster.script}</strong>}
+              <span>{project.poster.bottom}</span>
+              <i>{project.poster.mark}</i>
             </div>
           </div>
-
-          <dl className="project-facts">
+          <dl className="shell project-facts">
             <div><dt>Año</dt><dd>{project.year}</dd></div>
             <div><dt>Formato</dt><dd>{project.category}</dd></div>
             <div><dt>Lugar</dt><dd>{project.location}</dd></div>
@@ -40,7 +42,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
 
         <section className="project-narrative">
           <div className="shell narrative-grid">
-            <p className="detail-label">01 / Contexto</p>
+            <p className="detail-label">01 / Punto de partida</p>
             <div>
               <h2>El proyecto</h2>
               <p>{project.context}</p>
@@ -55,7 +57,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         <section className="shell project-detail-section">
           <header>
             <p className="detail-label">02 / Alcance</p>
-            <h2>Qué comprendía el trabajo.</h2>
+            <h2>Un encargo con <em>muchas piezas.</em></h2>
           </header>
           <ol className="scope-list">
             {project.scope.map((item, index) => (
@@ -68,7 +70,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           <div className="shell project-work-grid">
             <header>
               <p className="detail-label">03 / Trabajo desarrollado</p>
-              <h2>Entregables y responsabilidades.</h2>
+              <h2>Del plan a los <em>entregables.</em></h2>
             </header>
             <ul>
               {project.work.map((item) => <li key={item}>{item}</li>)}
@@ -76,10 +78,10 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           </div>
         </section>
 
-        <section className="shell project-detail-section">
+        <section className="shell project-detail-section process-section">
           <header>
             <p className="detail-label">04 / Proceso</p>
-            <h2>Un proyecto dividido en fases.</h2>
+            <h2>Una idea que toma <em>forma por etapas.</em></h2>
           </header>
           <ol className="phase-grid">
             {project.phases.map((phase, index) => (
@@ -96,7 +98,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           <div className="shell learning-record-grid">
             <header>
               <p className="detail-label">05 / Aprendizaje profesional</p>
-              <h2>Competencias puestas en práctica.</h2>
+              <h2>Competencias que salen <em>del papel.</em></h2>
             </header>
             <ul>
               {project.learning.map((item) => <li key={item}>{item}</li>)}
@@ -104,13 +106,28 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           </div>
         </section>
 
-        <aside className="shell project-documentation-note">
-          <p className="detail-label">Documentación</p>
-          <p>
-            Esta ficha presenta la estructura profesional del proyecto. El archivo se ampliará con
-            materiales y evidencias cuando hayan sido revisados y autorizados para publicación.
-          </p>
-        </aside>
+        <section className="project-sources">
+          <div className="shell project-sources-grid">
+            <div>
+              <p className="eyebrow">Material del proyecto</p>
+              <h2>{project.sources.length > 0 ? 'Seguir explorando.' : 'Archivo en construcción.'}</h2>
+            </div>
+            {project.sources.length > 0 ? (
+              <div className="source-links">
+                {project.sources.map((source) => (
+                  <a key={source.url} href={source.url} target="_blank" rel="noreferrer">
+                    {source.label}
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <p className="source-note">
+                Incorporaremos evidencias y documentación cuando hayan sido revisadas y autorizadas
+                para su publicación.
+              </p>
+            )}
+          </div>
+        </section>
 
         <nav className="next-project" aria-label="Siguiente proyecto">
           <a href={`${basePath}/proyectos/${nextProject.slug}/`} className="shell">
