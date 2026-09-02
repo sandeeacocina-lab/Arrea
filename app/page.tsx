@@ -1,6 +1,4 @@
 import {
-  ArrowDownRight,
-  ArrowUpRight,
   CalendarDays,
   ChartNoAxesCombined,
   ClipboardCheck,
@@ -66,7 +64,7 @@ export default function Home() {
 
           <nav className="desktop-nav" aria-label="Navegación principal">
             <a href="#servicios">Servicios</a>
-            <a href="#proyectos">Proyectos</a>
+            <a href={`${basePath}/proyectos/`}>Proyectos</a>
             <a href="#aula">Cómo trabajamos</a>
             <a href="#nosotros">Quiénes somos</a>
           </nav>
@@ -76,14 +74,13 @@ export default function Home() {
             className={cn(buttonVariants({ size: 'lg' }), 'header-cta')}
           >
             Cuéntanos tu idea
-            <ArrowUpRight aria-hidden="true" />
           </a>
 
           <details className="mobile-menu">
             <summary aria-label="Abrir menú">Menú</summary>
             <nav aria-label="Navegación móvil">
               <a href="#servicios">Servicios</a>
-              <a href="#proyectos">Proyectos</a>
+              <a href={`${basePath}/proyectos/`}>Proyectos</a>
               <a href="#aula">Cómo trabajamos</a>
               <a href="#nosotros">Quiénes somos</a>
               <a href="#contacto">Contacto</a>
@@ -109,10 +106,9 @@ export default function Home() {
               className={cn(buttonVariants({ size: 'lg' }), 'primary-action')}
             >
               Cuéntanos tu evento
-              <ArrowUpRight aria-hidden="true" />
             </a>
-            <a href="#proyectos" className="text-action">
-              Ver proyectos <ArrowDownRight aria-hidden="true" />
+            <a href={`${basePath}/proyectos/`} className="text-action">
+              Ver proyectos
             </a>
           </div>
         </div>
@@ -143,7 +139,7 @@ export default function Home() {
         <div className="section-heading">
           <p className="eyebrow">Qué hacemos</p>
           <h2>Todo lo necesario para que una idea <em>se convierta en experiencia.</em></h2>
-          <a href="#contacto" className="text-action">Cuéntanos qué necesitas <ArrowUpRight aria-hidden="true" /></a>
+          <a href="#contacto" className="text-action">Cuéntanos qué necesitas</a>
         </div>
         <div className="service-grid">
           {services.map(({ number, title, text, icon: Icon }) => (
@@ -161,12 +157,16 @@ export default function Home() {
 
       <section id="proyectos" className="featured-project section-space">
         <div className="shell project-grid">
-          <div className="project-poster" aria-label="Voces que inspiran">
+          <a
+            href={`${basePath}/proyectos/voces-que-inspiran/`}
+            className="project-poster"
+            aria-label="Consultar el proyecto Voces que inspiran"
+          >
             <span>Voces</span>
             <strong>que</strong>
             <span>inspiran</span>
             <i>2025</i>
-          </div>
+          </a>
           <div className="project-copy">
             <p className="eyebrow">Proyecto destacado · 2025</p>
             <h2>Voces que inspiran</h2>
@@ -179,7 +179,7 @@ export default function Home() {
               <div><dt>Equipo</dt><dd>Asistencia a la Dirección</dd></div>
               <div><dt>Lugar</dt><dd>IES Arca Real</dd></div>
             </dl>
-            <a href="#archivo" className="project-link">Explorar el archivo <ArrowDownRight aria-hidden="true" /></a>
+            <a href={`${basePath}/proyectos/voces-que-inspiran/`} className="project-link">Consultar el proyecto</a>
           </div>
         </div>
       </section>
@@ -190,16 +190,16 @@ export default function Home() {
           <h2 id="archive-title">Proyectos que construyen <em>experiencia de verdad.</em></h2>
         </div>
         <div className="archive-grid">
-          <article className="archive-card archive-card-primary">
+          <a href={`${basePath}/proyectos/voces-que-inspiran/`} className="archive-card archive-card-primary">
             <p>2025 · Jornada educativa</p>
             <h3>Voces que inspiran</h3>
             <span>Protocolo · Producción · Comunicación</span>
-          </article>
-          <article className="archive-card archive-card-light">
+          </a>
+          <a href={`${basePath}/proyectos/feria-arcadeca-2022/`} className="archive-card archive-card-light">
             <p>2022 · Feria educativa</p>
             <h3>Feria ARCADECA</h3>
             <span>Secretaría técnica · Atención · Difusión</span>
-          </article>
+          </a>
         </div>
       </section>
 
@@ -263,8 +263,8 @@ export default function Home() {
             <h2>¿Tienes una idea?<br /><em>Vamos a ponerla en marcha.</em></h2>
           </div>
           <div className="contact-details">
-            <a href="mailto:info@feriaarcadeca.es">info@feriaarcadeca.es <ArrowUpRight aria-hidden="true" /></a>
-            <a href="tel:+34983220818">983 22 08 18 <ArrowUpRight aria-hidden="true" /></a>
+            <a href="mailto:info@feriaarcadeca.es">info@feriaarcadeca.es</a>
+            <a href="tel:+34983220818">983 22 08 18</a>
             <address>IES Arca Real<br />C/ General Shelly, 1 · Valladolid</address>
           </div>
         </div>

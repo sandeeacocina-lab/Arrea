@@ -50,6 +50,9 @@ jobs:
       - name: Construir la web
         run: pnpm build
 
+      - name: Preparar las páginas internas
+        run: node scripts/prepare-github-pages.mjs
+
       - name: Empaquetar la web
         uses: actions/upload-pages-artifact@v4
         with:
