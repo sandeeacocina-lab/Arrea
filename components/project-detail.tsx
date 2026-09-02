@@ -1,5 +1,7 @@
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
+import { ProjectDossier } from '@/components/project-dossier';
+import { projectDossiers } from '@/lib/project-dossiers';
 import type { Project } from '@/lib/projects';
 import { basePath } from '@/lib/site';
 
@@ -9,6 +11,8 @@ type ProjectDetailProps = {
 };
 
 export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
+  const dossier = projectDossiers[project.slug];
+
   return (
     <>
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
@@ -38,8 +42,17 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
             <div><dt>Lugar</dt><dd>{project.location}</dd></div>
             <div><dt>Estado</dt><dd>{project.status}</dd></div>
           </dl>
+          {dossier && (
+            <nav className="shell dossier-nav" aria-label="En esta ficha de proyecto">
+              <a href="#experiencia">Explorar los materiales</a>
+              <a href="#historia">Historia del proyecto</a>
+              <a href="#galeria">Fotografías</a>
+              <a href="#fuentes">Webs y fuentes</a>
+            </nav>
+          )}
         </header>
 
+        {dossier ? <ProjectDossier dossier={dossier} /> : <>
         <section className="project-narrative">
           <div className="shell narrative-grid" data-reveal>
             <p className="detail-label">01 / Punto de partida</p>
@@ -94,10 +107,11 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           </ol>
         </section>
 
+        </>}
         <section className="learning-record">
           <div className="shell learning-record-grid" data-reveal>
             <header>
-              <p className="detail-label">05 / Aprendizaje profesional</p>
+              <p className="detail-label">{dossier ? 'Aprendizaje profesional' : '05 / Aprendizaje profesional'}</p>
               <h2>Competencias que salen <em>del papel.</em></h2>
             </header>
             <ul>
@@ -106,7 +120,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           </div>
         </section>
 
-        <section className="project-sources">
+        <section id="fuentes" className="project-sources">
           <div className="shell project-sources-grid" data-reveal>
             <div>
               <p className="eyebrow">Material del proyecto</p>

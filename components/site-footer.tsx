@@ -8,7 +8,7 @@ export function SiteFooter() {
           <img src={`${basePath}/images/arrea-logo-light.png`} alt="Arrea Eventos" />
         </a>
         <p>Empresa simulada del IES Arca Real</p>
-        <p>© {new Date().getFullYear()} Arrea Eventos · Sin cookies de seguimiento</p>
+        <p>© {new Date().getFullYear()} Arrea Eventos · Sin seguimiento propio</p>
       </div>
     </footer>
   );

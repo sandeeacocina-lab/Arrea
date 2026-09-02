@@ -64,6 +64,10 @@ export const projects: Project[] = [
     theme: 'raspberry',
     sources: [
       { label: 'Visitar la experiencia ExpoODS', url: 'https://expods.decasarre.es/' },
+      { label: 'Origen, objetivos y centros participantes', url: 'https://expods.decasarre.es/sobre-nosotros/' },
+      { label: 'Los ODS en la web original', url: 'https://expods.decasarre.es/ods/' },
+      { label: 'OreODS · Acción solidaria de 2022', url: 'https://expods.decasarre.es/oreods/' },
+      { label: 'Recorrido virtual en ThingLink', url: 'https://www.thinglink.com/mediacard/1543568065126465538' },
       { label: 'Proyecto TIC del IES Arca Real', url: 'https://iesarcareal.es/proyecto-tic/' },
     ],
   },
@@ -112,13 +116,15 @@ export const projects: Project[] = [
     theme: 'gold',
     sources: [
       {
-        label: 'Crónica del IES Arca Real',
+        label: 'Presentación de la feria · IES Arca Real',
         url: 'https://iesarcareal.es/i-feria-de-empresas-simuladas-arcadeca/',
       },
       {
-        label: 'Archivo de Decasarre',
-        url: 'https://decasarresas.wordpress.com/home/decasarre-sas-blog/',
+        label: 'Crónica, fotografías y vídeo · Decasarre',
+        url: 'https://decasarresas.wordpress.com/2022/05/05/virtual-fair/',
       },
+      { label: 'Feria virtual original · Genially', url: 'https://view.genial.ly/61f42788de478f00129f446e' },
+      { label: 'Resumen de la jornada · YouTube', url: 'https://www.youtube.com/watch?v=PV-Iv9-gqKw' },
     ],
   },
   {

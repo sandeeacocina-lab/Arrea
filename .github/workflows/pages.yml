@@ -53,6 +53,9 @@ jobs:
       - name: Preparar las páginas internas
         run: node scripts/prepare-github-pages.mjs
 
+      - name: Comprobar materiales de los proyectos
+        run: node --experimental-strip-types scripts/check-project-dossiers.mjs
+
       - name: Empaquetar la web
         uses: actions/upload-pages-artifact@v4
         with:
