@@ -1,7 +1,7 @@
 'use client';
 
+/* oxlint-disable next/no-img-element -- Static Pages serves original images; the fixed-ratio screen reserves their layout. */
 import { useId, useState } from 'react';
-import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
 import type { ProjectMedia } from '@/lib/project-dossiers';
@@ -42,7 +42,7 @@ export function ProjectExplorer({ media }: { media: ProjectMedia[] }) {
               referrerPolicy="strict-origin-when-cross-origin"
             />
           ) : (
-            <Image src={`${basePath}${item.preview}`} alt={`Vista previa: ${item.title}`} fill unoptimized style={{ objectFit: 'scale-down' }} loading="lazy" />
+            <img src={`${basePath}${item.preview}`} alt={`Vista previa: ${item.title}`} loading="lazy" decoding="async" />
           )}
         </div>
         <div className="explorer-caption">

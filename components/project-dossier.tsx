@@ -1,3 +1,4 @@
+/* oxlint-disable next/no-img-element -- Keep the original archive photographs on static Pages, with explicit dimensions and lazy loading. */
 import { ProjectExplorer } from '@/components/project-explorer';
 import type { ProjectDossier as Dossier } from '@/lib/project-dossiers';
 import { basePath } from '@/lib/site';
@@ -52,7 +53,7 @@ export function ProjectDossier({ dossier }: { dossier: Dossier }) {
           {dossier.photos.map((photo, index) => (
             <figure key={photo.src} data-reveal>
               <a href={`${basePath}${photo.src}`} target="_blank" rel="noreferrer" aria-label={`Ver fotografía completa: ${photo.alt}`}>
-                <Image src={`${basePath}${photo.src}`} alt={photo.alt} width={photo.width} height={photo.height} unoptimized loading="lazy" />
+                <img src={`${basePath}${photo.src}`} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" />
               </a>
               <figcaption><span>{String(index + 1).padStart(2, '0')}</span>{photo.caption}</figcaption>
             </figure>
@@ -98,4 +99,3 @@ export function ProjectDossier({ dossier }: { dossier: Dossier }) {
     </>
   );
 }
-import Image from 'next/image';
