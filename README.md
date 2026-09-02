@@ -6,6 +6,8 @@ La web presenta los servicios, proyectos y modelo de trabajo de Arrea, combinand
 
 ## Publicación
 
+Web pública: [Arrea Eventos](https://sandeeacocina-lab.github.io/Arrea/).
+
 El proyecto está preparado para publicarse automáticamente en GitHub Pages cuando se sube a la rama `main`. En GitHub, la fuente de Pages debe configurarse como **GitHub Actions**.
 
 ## Desarrollo local

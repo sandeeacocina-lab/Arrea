@@ -18,6 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://sandeeacocina-lab.github.io'),
   title: {
     default: 'Arrea Eventos | Tu evento, nuestra pasión',
     template: '%s | Arrea Eventos',
