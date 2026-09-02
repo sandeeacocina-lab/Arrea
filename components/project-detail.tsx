@@ -20,19 +20,19 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
             <span>{project.code}</span>
           </div>
           <div className="shell project-detail-hero-grid">
-            <div className="project-detail-copy">
+            <div className="project-detail-copy" data-reveal="left">
               <p className="eyebrow">{project.status} · {project.year}</p>
               <h1>{project.title}</h1>
               <p>{project.summary}</p>
             </div>
-            <div className={`detail-poster detail-poster-${project.theme}`} aria-hidden="true">
+            <div className={`detail-poster detail-poster-${project.theme}`} aria-hidden="true" data-reveal="right">
               <span>{project.poster.top}</span>
               {project.poster.script && <strong>{project.poster.script}</strong>}
               <span>{project.poster.bottom}</span>
               <i>{project.poster.mark}</i>
             </div>
           </div>
-          <dl className="shell project-facts">
+          <dl className="shell project-facts" data-reveal>
             <div><dt>Año</dt><dd>{project.year}</dd></div>
             <div><dt>Formato</dt><dd>{project.category}</dd></div>
             <div><dt>Lugar</dt><dd>{project.location}</dd></div>
@@ -41,7 +41,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         </header>
 
         <section className="project-narrative">
-          <div className="shell narrative-grid">
+          <div className="shell narrative-grid" data-reveal>
             <p className="detail-label">01 / Punto de partida</p>
             <div>
               <h2>El proyecto</h2>
@@ -54,7 +54,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           </div>
         </section>
 
-        <section className="shell project-detail-section">
+        <section className="shell project-detail-section" data-reveal>
           <header>
             <p className="detail-label">02 / Alcance</p>
             <h2>Un encargo con <em>muchas piezas.</em></h2>
@@ -67,7 +67,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         </section>
 
         <section className="project-work-section">
-          <div className="shell project-work-grid">
+          <div className="shell project-work-grid" data-reveal>
             <header>
               <p className="detail-label">03 / Trabajo desarrollado</p>
               <h2>Del plan a los <em>entregables.</em></h2>
@@ -78,7 +78,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           </div>
         </section>
 
-        <section className="shell project-detail-section process-section">
+        <section className="shell project-detail-section process-section" data-reveal>
           <header>
             <p className="detail-label">04 / Proceso</p>
             <h2>Una idea que toma <em>forma por etapas.</em></h2>
@@ -95,7 +95,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         </section>
 
         <section className="learning-record">
-          <div className="shell learning-record-grid">
+          <div className="shell learning-record-grid" data-reveal>
             <header>
               <p className="detail-label">05 / Aprendizaje profesional</p>
               <h2>Competencias que salen <em>del papel.</em></h2>
@@ -107,7 +107,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         </section>
 
         <section className="project-sources">
-          <div className="shell project-sources-grid">
+          <div className="shell project-sources-grid" data-reveal>
             <div>
               <p className="eyebrow">Material del proyecto</p>
               <h2>{project.sources.length > 0 ? 'Seguir explorando.' : 'Archivo en construcción.'}</h2>

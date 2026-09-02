@@ -8,6 +8,7 @@ import {
   UsersRound,
 } from 'lucide-react';
 
+import { AnimatedNumber } from '@/components/animated-number';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -90,7 +91,7 @@ export default function Home() {
       </header>
 
       <section id="contenido" className="hero shell" aria-labelledby="hero-title">
-        <div className="hero-copy">
+        <div className="hero-copy hero-enter">
           <p className="eyebrow"><MapPin aria-hidden="true" /> IES Arca Real · Valladolid</p>
           <h1 id="hero-title">
             Ideas que se organizan.<br />
@@ -113,7 +114,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero-visual">
+        <div className="hero-visual hero-enter hero-enter-late">
           <div className="photo-frame">
             <img
               src={`${basePath}/images/arrea-evento-editorial.png`}
@@ -128,20 +129,27 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="ticker" aria-label="Áreas de trabajo de Arrea Eventos">
-        <div>
-          <span>Planificamos</span><i>●</i><span>Coordinamos</span><i>●</i>
-          <span>Comunicamos</span><i>●</i><span>Conectamos</span><i>●</i>
+      <div className="ticker">
+        <span className="sr-only">Planificamos, coordinamos, comunicamos y conectamos.</span>
+        <div className="ticker-track" aria-hidden="true">
+          <div className="ticker-group">
+            <span>Planificamos</span><i>●</i><span>Coordinamos</span><i>●</i>
+            <span>Comunicamos</span><i>●</i><span>Conectamos</span><i>●</i>
+          </div>
+          <div className="ticker-group">
+            <span>Planificamos</span><i>●</i><span>Coordinamos</span><i>●</i>
+            <span>Comunicamos</span><i>●</i><span>Conectamos</span><i>●</i>
+          </div>
         </div>
       </div>
 
       <section id="servicios" className="services-section shell section-space">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <p className="eyebrow">Qué hacemos</p>
           <h2>Todo lo necesario para que una idea <em>se convierta en experiencia.</em></h2>
           <a href="#contacto" className="text-action">Cuéntanos qué necesitas</a>
         </div>
-        <div className="service-grid">
+        <div className="service-grid" data-reveal="scale">
           {services.map(({ number, title, text, icon: Icon }) => (
             <article key={number} className="service-card">
               <div className="service-card-top">
@@ -161,13 +169,14 @@ export default function Home() {
             href={`${basePath}/proyectos/expods/`}
             className="project-poster"
             aria-label="Consultar el proyecto ExpoODS"
+            data-reveal="left"
           >
             <span>EXP</span>
             <strong>los</strong>
             <span>ODS</span>
             <i>2030</i>
           </a>
-          <div className="project-copy">
+          <div className="project-copy" data-reveal="right">
             <p className="eyebrow">Proyecto destacado · eTwinning</p>
             <h2>ExpoODS</h2>
             <p>
@@ -185,11 +194,11 @@ export default function Home() {
       </section>
 
       <section id="archivo" className="archive-section shell section-space" aria-labelledby="archive-title">
-        <div className="section-heading archive-heading">
+        <div className="section-heading archive-heading" data-reveal>
           <p className="eyebrow">Archivo Arrea</p>
           <h2 id="archive-title">Proyectos que construyen <em>experiencia de verdad.</em></h2>
         </div>
-        <div className="archive-grid">
+        <div className="archive-grid" data-reveal="scale">
           <a href={`${basePath}/proyectos/feria-arcadeca-2022/`} className="archive-card archive-card-primary">
             <p>2022 · Feria híbrida</p>
             <h3>Feria ARCADECA</h3>
@@ -211,7 +220,7 @@ export default function Home() {
 
       <section id="aula" className="learning-section section-space" aria-labelledby="learning-title">
         <div className="shell">
-          <div className="learning-intro">
+          <div className="learning-intro" data-reveal>
             <p className="eyebrow">Cómo trabajamos</p>
             <h2 id="learning-title">Una empresa simulada.<br /><em>Un estándar profesional.</em></h2>
             <p>
@@ -219,7 +228,7 @@ export default function Home() {
               asistencia a la dirección y trabaja con encargos, plazos, reuniones y entregables.
             </p>
           </div>
-          <div className="learning-grid">
+          <div className="learning-grid" data-reveal="scale">
             <article>
               <span>01</span>
               <h3>Simulaciones formativas</h3>
@@ -236,17 +245,17 @@ export default function Home() {
               <p>Encargos viables del centro y su entorno, con interlocución, resultados y revisión profesional.</p>
             </article>
           </div>
-          <dl className="learning-stats" aria-label="Datos del módulo">
-            <div><dt>54</dt><dd>horas de práctica</dd></div>
-            <div><dt>5</dt><dd>resultados de aprendizaje</dd></div>
-            <div><dt>1</dt><dd>empresa que conecta todo</dd></div>
+          <dl className="learning-stats" aria-label="Datos del módulo" data-reveal>
+            <div><dt><AnimatedNumber value={54} /></dt><dd>horas de práctica</dd></div>
+            <div><dt><AnimatedNumber value={5} /></dt><dd>resultados de aprendizaje</dd></div>
+            <div><dt><AnimatedNumber value={1} /></dt><dd>empresa que conecta todo</dd></div>
           </dl>
         </div>
       </section>
 
       <section id="nosotros" className="about-section shell section-space">
         <p className="eyebrow">Quiénes somos</p>
-        <div className="about-grid">
+        <div className="about-grid" data-reveal>
           <h2>Una empresa donde el aula <em>se parece al mundo real.</em></h2>
           <div>
             <p>
@@ -263,7 +272,7 @@ export default function Home() {
       </section>
 
       <section id="contacto" className="contact-section">
-        <div className="shell contact-grid">
+        <div className="shell contact-grid" data-reveal>
           <div>
             <p className="eyebrow">Hablemos</p>
             <h2>¿Tienes una idea?<br /><em>Vamos a ponerla en marcha.</em></h2>

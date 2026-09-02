@@ -17,7 +17,7 @@ export default function ProjectsPage() {
       <SiteHeader />
       <main id="contenido">
         <section className="shell project-index-hero" aria-labelledby="projects-title">
-          <div>
+          <div data-reveal="left">
             <p className="eyebrow">Archivo Arrea</p>
             <h1 id="projects-title">Proyectos que dejan <em>trabajo visible.</em></h1>
             <p className="project-index-lead">
@@ -25,7 +25,7 @@ export default function ProjectsPage() {
               toma decisiones y construye resultados que pueden explicarse y compartirse.
             </p>
           </div>
-          <div className="archive-poster" aria-hidden="true">
+          <div className="archive-poster" aria-hidden="true" data-reveal="right">
             <span>AR</span>
             <strong>chivo</strong>
             <i>vivo</i>
@@ -35,11 +35,11 @@ export default function ProjectsPage() {
 
         <section className="project-index-section section-space" aria-labelledby="project-list-title">
           <div className="shell">
-            <div className="project-index-heading">
+            <div className="project-index-heading" data-reveal>
               <p className="eyebrow">Selección de proyectos</p>
               <h2 id="project-list-title">Ideas convertidas en <em>experiencia profesional.</em></h2>
             </div>
-            <div className="project-card-grid">
+            <div className="project-card-grid" data-reveal="scale">
               {projects.map((project, index) => (
                 <a
                   key={project.slug}
@@ -57,7 +57,7 @@ export default function ProjectsPage() {
         </section>
 
         <aside className="archive-principle">
-          <div className="shell archive-principle-grid">
+          <div className="shell archive-principle-grid" data-reveal>
             <p className="eyebrow">Archivo abierto</p>
             <p>
               Cada ficha explica el contexto, el proceso y las competencias desarrolladas. Los
