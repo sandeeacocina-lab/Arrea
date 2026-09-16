@@ -1,299 +1,317 @@
+/* oxlint-disable next/no-img-element -- Preserve the original brand assets on static GitHub Pages. */
 import {
   CalendarDays,
   ChartNoAxesCombined,
   ClipboardCheck,
-  MapPin,
   Megaphone,
   Sparkles,
   UsersRound,
 } from 'lucide-react';
-
-import { AnimatedNumber } from '@/components/animated-number';
-import { buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { SiteFooter } from '@/components/site-footer';
+import { SiteHeader } from '@/components/site-header';
+import { inquiryEmail } from '@/lib/packages';
+import { basePath } from '@/lib/site';
 
 const services = [
   {
-    number: '01',
-    title: 'Eventos que conectan',
-    text: 'Diseñamos jornadas, ferias y encuentros para que cada detalle tenga un propósito.',
+    title: 'Eventos corporativos',
+    text: 'Jornadas, encuentros profesionales, ferias y presentaciones de empresa.',
     icon: CalendarDays,
   },
   {
-    number: '02',
     title: 'Secretaría técnica',
-    text: 'Coordinamos participantes, agenda, comunicaciones y documentación antes, durante y después.',
+    text: 'Inscripciones, agendas y atención a asistentes y ponentes.',
     icon: UsersRound,
   },
   {
-    number: '03',
     title: 'Comunicación creativa',
-    text: 'Convertimos la idea del evento en una identidad, una campaña y una experiencia coherente.',
+    text: 'La imagen y los materiales que representan a tu empresa.',
     icon: Sparkles,
   },
   {
-    number: '04',
     title: 'Protocolo y acogida',
-    text: 'Cuidamos invitaciones, recepción, precedencias, atención a ponentes y experiencia de asistentes.',
+    text: 'Invitaciones, acreditaciones y una bienvenida cuidada.',
     icon: ClipboardCheck,
   },
   {
-    number: '05',
     title: 'Difusión y contenidos',
-    text: 'Preparamos piezas, mensajes y calendarios para dar visibilidad al proyecto antes y después del evento.',
+    text: 'Mensajes y publicaciones antes, durante y después.',
     icon: Megaphone,
   },
   {
-    number: '06',
-    title: 'Memoria y evaluación',
-    text: 'Recogemos evidencias, resultados y aprendizajes para cerrar cada proyecto y mejorar el siguiente.',
+    title: 'Evaluación y resultados',
+    text: 'Opiniones, objetivos y propuestas de mejora.',
     icon: ChartNoAxesCombined,
   },
 ];
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const archive = [
+  {
+    slug: 'expods',
+    title: 'ExpoODS',
+    date: '2022–2023',
+    text: 'Exposición digital · eTwinning',
+    theme: 'primary',
+  },
+  {
+    slug: 'feria-arcadeca-2022',
+    title: 'Feria ARCADECA',
+    date: '2022',
+    text: 'Feria híbrida',
+    theme: 'light',
+  },
+  {
+    slug: 'arca-impulsa-fp',
+    title: 'Arca Impulsa FP',
+    date: '2023–2026',
+    text: 'Jornadas de FP',
+    theme: 'sand',
+  },
+  {
+    slug: 'voces-que-inspiran',
+    title: 'Voces que inspiran',
+    date: '2025',
+    text: 'Jornada educativa',
+    theme: 'ink',
+  },
+];
 
 export default function Home() {
   return (
-    <main>
-      <a className="skip-link" href="#contenido">Saltar al contenido</a>
-      <header className="site-header">
-        <div className="shell header-inner">
-          <a href="#contenido" aria-label="Arrea Eventos, inicio" className="brand-link">
-            <img src={`${basePath}/images/arrea-logo.png`} alt="Arrea Eventos" />
-          </a>
-
-          <nav className="desktop-nav" aria-label="Navegación principal">
-            <a href="#servicios">Servicios</a>
-            <a href={`${basePath}/proyectos/`}>Proyectos</a>
-            <a href="#aula">Cómo trabajamos</a>
-            <a href="#nosotros">Quiénes somos</a>
-          </nav>
-
-          <a
-            href="#contacto"
-            className={cn(buttonVariants({ size: 'lg' }), 'header-cta')}
-          >
-            Cuéntanos tu idea
-          </a>
-
-          <details className="mobile-menu">
-            <summary aria-label="Abrir menú">Menú</summary>
-            <nav aria-label="Navegación móvil">
-              <a href="#servicios">Servicios</a>
-              <a href={`${basePath}/proyectos/`}>Proyectos</a>
-              <a href="#aula">Cómo trabajamos</a>
-              <a href="#nosotros">Quiénes somos</a>
-              <a href="#contacto">Contacto</a>
-            </nav>
-          </details>
+    <>
+      <a className="skip-link" href="#contenido">
+        Saltar al contenido
+      </a>
+      <SiteHeader home />
+      <main className="home">
+        <section
+          id="contenido"
+          className="hero shell"
+          aria-labelledby="hero-title"
+        >
+          <div className="hero-copy hero-enter">
+            <p className="eyebrow">Eventos empresariales · Valladolid</p>
+            <h1 id="hero-title">
+              Ideas que se organizan.
+              <br />
+              <em>Eventos que dejan huella.</em>
+            </h1>
+            <p className="hero-intro">
+              En ARREA diseñamos y coordinamos eventos que conectan a las
+              empresas con sus públicos. Transformamos tus objetivos en una
+              experiencia cuidada de principio a fin.
+            </p>
+            <div className="hero-actions">
+              <a href="#contacto" className="action action-primary">
+                Cuéntanos tu evento
+              </a>
+              <a href={`${basePath}/proyectos/`} className="text-action">
+                Ver proyectos
+              </a>
+            </div>
+          </div>
+          <div className="hero-visual hero-enter hero-enter-late">
+            <div className="photo-frame">
+              <img
+                src={`${basePath}/images/arrea-evento-editorial.png`}
+                alt="Preparación de un evento corporativo con escenario, señalética y zona de recepción"
+                width={1732}
+                height={924}
+                fetchPriority="high"
+              />
+            </div>
+            <div className="hero-stamp" aria-label="Desde 2021">
+              <span>Desde</span>
+              <strong>2021</strong>
+            </div>
+            <div className="hero-note">
+              Tu evento,
+              <br />
+              nuestra pasión.
+            </div>
+          </div>
+        </section>
+        <div className="ticker">
+          <span className="sr-only">
+            Planificamos, coordinamos, comunicamos y conectamos.
+          </span>
+          <div className="ticker-track" aria-hidden="true">
+            {[0, 1].map((copy) => (
+              <div className="ticker-group" key={copy}>
+                <span>Planificamos</span>
+                <i>●</i>
+                <span>Coordinamos</span>
+                <i>●</i>
+                <span>Comunicamos</span>
+                <i>●</i>
+                <span>Conectamos</span>
+                <i>●</i>
+              </div>
+            ))}
+          </div>
         </div>
-      </header>
-
-      <section id="contenido" className="hero shell" aria-labelledby="hero-title">
-        <div className="hero-copy hero-enter">
-          <p className="eyebrow"><MapPin aria-hidden="true" /> IES Arca Real · Valladolid</p>
-          <h1 id="hero-title">
-            Ideas que se organizan.<br />
-            <em>Eventos que dejan huella.</em>
-          </h1>
-          <p className="hero-intro">
-            Somos la empresa simulada de Asistencia a la Dirección del IES Arca Real.
-            Aprendemos haciendo: planificamos, comunicamos y damos vida a eventos reales.
-          </p>
-          <div className="hero-actions">
+        <section
+          id="servicios"
+          className="services-section shell section-space"
+          aria-labelledby="services-title"
+        >
+          <div className="section-heading" data-reveal>
+            <p className="eyebrow">Qué hacemos</p>
+            <h2 id="services-title">Todo lo necesario para tu evento.</h2>
+          </div>
+          <div className="service-grid">
+            {services.map(({ title, text, icon: Icon }, index) => (
+              <article className="service-card" key={title} data-reveal>
+                <span className="service-number">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <Icon aria-hidden="true" />
+                <div>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section
+          className="packages-banner"
+          aria-labelledby="packages-cta-title"
+        >
+          <div className="shell packages-banner-inner">
+            <div>
+              <p className="eyebrow">Nuestros paquetes</p>
+              <h2 id="packages-cta-title">
+                Encuentra el paquete que encaja contigo.
+              </h2>
+              <p>
+                Comunicación, jornadas y convenciones con alcance y precio
+                definidos.
+              </p>
+              <p className="package-names">Impulso · Encuentro · Conexión</p>
+            </div>
+            <a className="action action-ink" href={`${basePath}/paquetes/`}>
+              Consulta los paquetes
+            </a>
+          </div>
+        </section>
+        <section
+          id="archivo"
+          className="archive-section shell section-space"
+          aria-labelledby="archive-title"
+        >
+          <div className="section-heading" data-reveal>
+            <p className="eyebrow">Archivo Arrea</p>
+            <h2 id="archive-title">
+              Proyectos que forman parte de nuestra historia.
+            </h2>
+            <p className="section-lead">
+              Eventos, encuentros y experiencias digitales que muestran la
+              evolución de ARREA.
+            </p>
+          </div>
+          <div className="archive-grid" id="proyectos">
+            {archive.map((project) => (
+              <a
+                href={`${basePath}/proyectos/${project.slug}/`}
+                className={`archive-card archive-card-${project.theme}`}
+                key={project.slug}
+                data-reveal
+              >
+                <p>{project.date}</p>
+                <h3>{project.title}</h3>
+                <span>{project.text}</span>
+              </a>
+            ))}
+          </div>
+          <div className="archive-link-wrap">
             <a
-              href="#contacto"
-              className={cn(buttonVariants({ size: 'lg' }), 'primary-action')}
+              href={`${basePath}/proyectos/`}
+              className="text-action archive-all-link"
             >
+              Ver el archivo completo
+            </a>
+          </div>
+        </section>
+        <section
+          id="aula"
+          className="learning-section section-space"
+          aria-labelledby="learning-title"
+        >
+          <div className="shell">
+            <div className="learning-intro" data-reveal>
+              <p className="eyebrow">Cómo trabajamos</p>
+              <h2 id="learning-title">
+                Tu objetivo marca el comienzo.
+                <br />
+                <em>Nosotros organizamos el camino.</em>
+              </h2>
+            </div>
+            <div className="learning-grid">
+              <article data-reveal>
+                <h3>01 · Entendemos tu idea</h3>
+                <p>
+                  Definimos contigo el objetivo, el público, el formato y el
+                  presupuesto.
+                </p>
+              </article>
+              <article data-reveal>
+                <h3>02 · Preparamos cada detalle</h3>
+                <p>
+                  Coordinamos recursos, proveedores, programa y atención a
+                  invitados.
+                </p>
+              </article>
+              <article data-reveal>
+                <h3>03 · Coordinamos y evaluamos</h3>
+                <p>
+                  Supervisamos el evento, atendemos incidencias y revisamos los
+                  resultados.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section
+          id="nosotros"
+          className="about-section shell section-space"
+          aria-labelledby="about-title"
+        >
+          <p className="eyebrow">Quiénes somos</p>
+          <div className="about-grid" data-reveal>
+            <h2 id="about-title">
+              Organización, creatividad y atención a las personas.
+            </h2>
+            <p>
+              ARREA Eventos es una agencia de organización y comunicación de
+              eventos empresariales con base en Valladolid. Trabajamos con
+              responsabilidades claras, comunicación cercana y atención al
+              detalle.
+            </p>
+          </div>
+        </section>
+        <section
+          id="contacto"
+          className="contact-section"
+          aria-labelledby="contact-title"
+        >
+          <div className="shell commercial-contact">
+            <div>
+              <h2 id="contact-title">Hablemos de tu próximo evento.</h2>
+              <p>
+                Cuéntanos qué quieres organizar, a quién va dirigido y qué fecha
+                tienes en mente.
+              </p>
+            </div>
+            <a className="action action-ink" href={inquiryEmail()}>
               Cuéntanos tu evento
             </a>
-            <a href={`${basePath}/proyectos/`} className="text-action">
-              Ver proyectos
+            <a className="contact-email" href="mailto:info@feriaarcadeca.es">
+              info@feriaarcadeca.es
             </a>
           </div>
-        </div>
-
-        <div className="hero-visual hero-enter hero-enter-late">
-          <div className="photo-frame">
-            <img
-              src={`${basePath}/images/arrea-evento-editorial.png`}
-              alt="Preparación de un evento contemporáneo con escenario, señalética y zona de recepción"
-            />
-          </div>
-          <div className="hero-stamp" aria-label="Desde 2021">
-            <span>Desde</span>
-            <strong>2021</strong>
-          </div>
-          <div className="hero-note">Tu evento,<br />nuestra pasión.</div>
-        </div>
-      </section>
-
-      <div className="ticker">
-        <span className="sr-only">Planificamos, coordinamos, comunicamos y conectamos.</span>
-        <div className="ticker-track" aria-hidden="true">
-          <div className="ticker-group">
-            <span>Planificamos</span><i>●</i><span>Coordinamos</span><i>●</i>
-            <span>Comunicamos</span><i>●</i><span>Conectamos</span><i>●</i>
-          </div>
-          <div className="ticker-group">
-            <span>Planificamos</span><i>●</i><span>Coordinamos</span><i>●</i>
-            <span>Comunicamos</span><i>●</i><span>Conectamos</span><i>●</i>
-          </div>
-        </div>
-      </div>
-
-      <section id="servicios" className="services-section shell section-space">
-        <div className="section-heading" data-reveal>
-          <p className="eyebrow">Qué hacemos</p>
-          <h2>Todo lo necesario para que una idea <em>se convierta en experiencia.</em></h2>
-          <a href="#contacto" className="text-action">Cuéntanos qué necesitas</a>
-        </div>
-        <div className="service-grid" data-reveal="scale">
-          {services.map(({ number, title, text, icon: Icon }) => (
-            <article key={number} className="service-card">
-              <div className="service-card-top">
-                <span>{number}</span>
-                <Icon aria-hidden="true" />
-              </div>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="proyectos" className="featured-project section-space">
-        <div className="shell project-grid">
-          <a
-            href={`${basePath}/proyectos/expods/`}
-            className="project-poster"
-            aria-label="Consultar el proyecto ExpoODS"
-            data-reveal="left"
-          >
-            <span>EXP</span>
-            <strong>los</strong>
-            <span>ODS</span>
-            <i>2030</i>
-          </a>
-          <div className="project-copy" data-reveal="right">
-            <p className="eyebrow">Proyecto destacado · eTwinning</p>
-            <h2>ExpoODS</h2>
-            <p>
-              Una exposición virtual sobre los Objetivos de Desarrollo Sostenible creada y
-              gestionada por el alumnado, con visita 3D y recursos digitales propios.
-            </p>
-            <dl>
-              <div><dt>Formato</dt><dd>Exposición digital</dd></div>
-              <div><dt>Marco</dt><dd>eTwinning SustainABLE</dd></div>
-              <div><dt>Alcance</dt><dd>Colaboración europea</dd></div>
-            </dl>
-            <a href={`${basePath}/proyectos/expods/`} className="project-link">Consultar el proyecto</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="archivo" className="archive-section shell section-space" aria-labelledby="archive-title">
-        <div className="section-heading archive-heading" data-reveal>
-          <p className="eyebrow">Archivo Arrea</p>
-          <h2 id="archive-title">Proyectos que construyen <em>experiencia de verdad.</em></h2>
-        </div>
-        <div className="archive-grid" data-reveal="scale">
-          <a href={`${basePath}/proyectos/feria-arcadeca-2022/`} className="archive-card archive-card-primary">
-            <p>2022 · Feria híbrida</p>
-            <h3>Feria ARCADECA</h3>
-            <span>Entorno virtual · Intercentros · Comunicación</span>
-          </a>
-          <a href={`${basePath}/proyectos/arca-impulsa-fp/`} className="archive-card archive-card-light">
-            <p>2023–2026 · Jornadas de FP</p>
-            <h3>Arca Impulsa FP</h3>
-            <span>Orientación · Talleres · Experiencia de visita</span>
-          </a>
-          <a href={`${basePath}/proyectos/voces-que-inspiran/`} className="archive-card archive-card-ink">
-            <p>2025 · Jornada educativa</p>
-            <h3>Voces que inspiran</h3>
-            <span>Protocolo · Producción · Comunicación</span>
-          </a>
-        </div>
-        <a href={`${basePath}/proyectos/`} className="text-action archive-all-link">Ver el archivo completo</a>
-      </section>
-
-      <section id="aula" className="learning-section section-space" aria-labelledby="learning-title">
-        <div className="shell">
-          <div className="learning-intro" data-reveal>
-            <p className="eyebrow">Cómo trabajamos</p>
-            <h2 id="learning-title">Una empresa simulada.<br /><em>Un estándar profesional.</em></h2>
-            <p>
-              Arrea es el eje práctico del módulo CL2103. El alumnado asume funciones reales de
-              asistencia a la dirección y trabaja con encargos, plazos, reuniones y entregables.
-            </p>
-          </div>
-          <div className="learning-grid" data-reveal="scale">
-            <article>
-              <span>01</span>
-              <h3>Simulaciones formativas</h3>
-              <p>Casos preparados para ensayar decisiones, documentación y coordinación en un entorno seguro.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Proyectos cooperativos</h3>
-              <p>Equipos con responsabilidades definidas que planifican, producen y evalúan un evento completo.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>Colaboraciones reales</h3>
-              <p>Encargos viables del centro y su entorno, con interlocución, resultados y revisión profesional.</p>
-            </article>
-          </div>
-          <dl className="learning-stats" aria-label="Datos del módulo" data-reveal>
-            <div><dt><AnimatedNumber value={54} /></dt><dd>horas de práctica</dd></div>
-            <div><dt><AnimatedNumber value={5} /></dt><dd>resultados de aprendizaje</dd></div>
-            <div><dt><AnimatedNumber value={1} /></dt><dd>empresa que conecta todo</dd></div>
-          </dl>
-        </div>
-      </section>
-
-      <section id="nosotros" className="about-section shell section-space">
-        <p className="eyebrow">Quiénes somos</p>
-        <div className="about-grid" data-reveal>
-          <h2>Una empresa donde el aula <em>se parece al mundo real.</em></h2>
-          <div>
-            <p>
-              Arrea nació en 2021 dentro del IES Arca Real para transformar el aprendizaje en
-              práctica profesional. Cada proyecto es una oportunidad para organizar, colaborar,
-              tomar decisiones y mejorar.
-            </p>
-            <p>
-              Somos un equipo que cambia cada curso, pero mantiene la misma energía: convertir
-              ideas en experiencias bien pensadas, útiles y memorables.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="contacto" className="contact-section">
-        <div className="shell contact-grid" data-reveal>
-          <div>
-            <p className="eyebrow">Hablemos</p>
-            <h2>¿Tienes una idea?<br /><em>Vamos a ponerla en marcha.</em></h2>
-          </div>
-          <div className="contact-details">
-            <a href="mailto:info@feriaarcadeca.es">info@feriaarcadeca.es</a>
-            <a href="tel:+34983220818">983 22 08 18</a>
-            <address>IES Arca Real<br />C/ General Shelly, 1 · Valladolid</address>
-          </div>
-        </div>
-      </section>
-
-      <footer className="site-footer">
-        <div className="shell footer-inner">
-          <a href="#contenido" aria-label="Arrea Eventos, inicio" className="footer-brand">
-            <img src={`${basePath}/images/arrea-logo-light.png`} alt="Arrea Eventos" />
-          </a>
-          <p>Empresa simulada del IES Arca Real</p>
-          <p>© {new Date().getFullYear()} Arrea Eventos · Sin cookies de seguimiento</p>
-        </div>
-      </footer>
-    </main>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
   );
 }

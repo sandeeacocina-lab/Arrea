@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: '%s | Arrea Eventos',
   },
   description:
-    'Empresa simulada del IES Arca Real de Valladolid dedicada a la organización, coordinación y comunicación de eventos.',
+    'ARREA Eventos. Organización, coordinación y comunicación de eventos empresariales en Valladolid. Tu evento, nuestra pasión.',
   icons: {
     icon: `${basePath}/favicon.svg`,
   },
@@ -33,12 +33,14 @@ export const metadata: Metadata = {
     description: 'Ideas que se organizan. Eventos que dejan huella.',
     type: 'website',
     locale: 'es_ES',
-    images: [{
-      url: `${basePath}/og.png`,
-      width: 1732,
-      height: 909,
-      alt: 'Arrea Eventos — Ideas que se organizan. Eventos que dejan huella.',
-    }],
+    images: [
+      {
+        url: `${basePath}/og.png`,
+        width: 1732,
+        height: 909,
+        alt: 'Arrea Eventos — Ideas que se organizan. Eventos que dejan huella.',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
