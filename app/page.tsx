@@ -75,6 +75,34 @@ const archive = [
   },
 ];
 
+// Illustrative testimonials for the educational simulation, not real reviews.
+const exampleTestimonials = [
+  {
+    event: 'Jornada empresarial',
+    quote:
+      'Una sola persona de contacto y todo coordinado. Pudimos centrarnos en nuestros invitados y disfrutar de la jornada.',
+    name: 'Elena Rivas',
+    city: 'Valladolid',
+    variant: 'featured',
+  },
+  {
+    event: 'Encuentro de equipo',
+    quote:
+      'Nos explicaron cada paso. Llegamos al evento con la tranquilidad de tenerlo todo preparado.',
+    name: 'Sergio Valdés',
+    city: 'Palencia',
+    variant: 'light',
+  },
+  {
+    event: 'Presentación de empresa',
+    quote:
+      'Entendieron nuestra idea y cuidaron cada detalle. La comunicación fue cercana de principio a fin.',
+    name: 'Claudia Montes',
+    city: 'Burgos',
+    variant: 'warm',
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -270,6 +298,44 @@ export default function Home() {
               </article>
             </div>
           </div>
+        </section>
+        <section
+          id="opiniones"
+          className="testimonials-section shell section-space"
+          aria-labelledby="testimonials-title"
+          aria-describedby="testimonials-disclosure"
+        >
+          <div className="section-heading">
+            <p className="eyebrow">Nuestros clientes</p>
+            <h2 id="testimonials-title">
+              Muchas experiencias.
+              <br />
+              <em>Un mismo punto de encuentro.</em>
+            </h2>
+          </div>
+          <div className="testimonials-grid">
+            {exampleTestimonials.map((testimonial) => (
+              <figure
+                className={`testimonial-card testimonial-card-${testimonial.variant}`}
+                key={testimonial.name}
+              >
+                <p className="testimonial-stars">
+                  <span className="sr-only">Valoración simulada: 5 de 5</span>
+                  <span aria-hidden="true">★★★★★</span>
+                </p>
+                <blockquote>
+                  <p>«{testimonial.quote}»</p>
+                </blockquote>
+                <figcaption>
+                  <strong>{testimonial.name}</strong>
+                  <span>{testimonial.event} · {testimonial.city}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p id="testimonials-disclosure" className="testimonials-disclosure">
+            Opiniones y nombres simulados para este proyecto educativo.
+          </p>
         </section>
         <section
           id="contacto"
