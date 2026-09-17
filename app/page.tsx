@@ -1,7 +1,7 @@
 /* oxlint-disable next/no-img-element -- Preserve the original brand assets on static GitHub Pages. */
 import {
   CalendarDays,
-  ChartNoAxesCombined,
+  ChartColumnIncreasing,
   ClipboardCheck,
   Megaphone,
   Sparkles,
@@ -41,7 +41,7 @@ const services = [
   {
     title: 'Evaluación y resultados',
     text: 'Opiniones, objetivos y propuestas de mejora.',
-    icon: ChartNoAxesCombined,
+    icon: ChartColumnIncreasing,
   },
 ];
 const archive = [
