@@ -1,4 +1,4 @@
-import { access, copyFile, cp, mkdir, readdir, readFile } from 'node:fs/promises';
+import { copyFile, cp, mkdir, readdir, readFile, stat } from 'node:fs/promises';
 import { basename, dirname, join, relative, resolve } from 'node:path';
 
 const outputDirectory = join(process.cwd(), 'dist', 'client');
@@ -56,7 +56,10 @@ for (const page of await collectHtmlFiles(outputDirectory)) {
       throw new Error(`Local URL escapes the public output: ${pathname}`);
     }
     if (checkedPaths.has(target)) continue;
-    await access(target);
+    const file = await stat(target);
+    if (!file.isFile() || file.size === 0) {
+      throw new Error(`Missing or empty public file: ${pathname}`);
+    }
     checkedPaths.add(target);
   }
 }
