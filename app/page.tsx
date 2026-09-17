@@ -124,9 +124,9 @@ export default function Home() {
               <strong>2021</strong>
             </div>
             <div className="hero-note">
-              Tu evento,
+              Un solo punto,
               <br />
-              nuestra pasión.
+              todo tu evento
             </div>
           </div>
         </section>
@@ -269,24 +269,6 @@ export default function Home() {
                 </p>
               </article>
             </div>
-          </div>
-        </section>
-        <section
-          id="nosotros"
-          className="about-section shell section-space"
-          aria-labelledby="about-title"
-        >
-          <p className="eyebrow">Quiénes somos</p>
-          <div className="about-grid" data-reveal>
-            <h2 id="about-title">
-              Organización, creatividad y atención a las personas.
-            </h2>
-            <p>
-              ARREA Eventos es una agencia de organización y comunicación de
-              eventos empresariales con base en Valladolid. Trabajamos con
-              responsabilidades claras, comunicación cercana y atención al
-              detalle.
-            </p>
           </div>
         </section>
         <section

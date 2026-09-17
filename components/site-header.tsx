@@ -6,7 +6,7 @@ export function SiteHeader({
   active,
 }: {
   home?: boolean;
-  active?: 'paquetes' | 'proyectos';
+  active?: 'paquetes' | 'proyectos' | 'quienes-somos';
 }) {
   const homeLink = home ? '' : `${basePath}/`;
   return (
@@ -35,7 +35,12 @@ export function SiteHeader({
             Proyectos
           </a>
           <a href={`${homeLink}#aula`}>Cómo trabajamos</a>
-          <a href={`${homeLink}#nosotros`}>Quiénes somos</a>
+          <a
+            href={`${basePath}/quienes-somos/`}
+            aria-current={active === 'quienes-somos' ? 'page' : undefined}
+          >
+            Quiénes somos
+          </a>
         </nav>
 
         <a href={`${homeLink}#contacto`} className="header-cta">
@@ -54,7 +59,12 @@ export function SiteHeader({
             </a>
             <a href={`${basePath}/proyectos/`}>Proyectos</a>
             <a href={`${homeLink}#aula`}>Cómo trabajamos</a>
-            <a href={`${homeLink}#nosotros`}>Quiénes somos</a>
+            <a
+              href={`${basePath}/quienes-somos/`}
+              aria-current={active === 'quienes-somos' ? 'page' : undefined}
+            >
+              Quiénes somos
+            </a>
             <a href={`${homeLink}#contacto`}>Contacto</a>
           </nav>
         </details>

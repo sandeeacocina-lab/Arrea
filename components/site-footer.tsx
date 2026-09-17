@@ -20,8 +20,9 @@ export function SiteFooter() {
             ARREA Eventos es una empresa simulada del ciclo de Asistencia a la
             Dirección del IES Arca Real de Valladolid. Esta web tiene finalidad
             educativa e incluye contenidos e imágenes generados con inteligencia
-            artificial. Los proyectos históricos conservan sus referencias y
-            autorías correspondientes.
+            artificial. El equipo se representa mediante personajes ficticios.
+            Los proyectos históricos conservan sus referencias y autorías
+            correspondientes.
           </p>
           <p className="footer-school">
             Centro educativo: C/ General Shelly, 1 · Valladolid ·{' '}
