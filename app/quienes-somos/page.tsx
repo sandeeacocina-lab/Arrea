@@ -16,7 +16,7 @@ const team = [
     name: 'Lucía',
     role: 'Coordinación de eventos',
     text: 'Tu contacto durante todo el proyecto.',
-    image: 'lucia.webp',
+    image: 'lucia.webp?v=2',
     width: 800,
     height: 1000,
   },
