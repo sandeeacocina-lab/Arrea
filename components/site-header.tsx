@@ -1,5 +1,5 @@
 /* oxlint-disable next/no-img-element -- Keep the original logo files on static GitHub Pages. */
-import { basePath } from '@/lib/site';
+import { basePath, contactUrl } from '@/lib/site';
 
 export function SiteHeader({
   home = false,
@@ -43,7 +43,7 @@ export function SiteHeader({
           </a>
         </nav>
 
-        <a href={`${homeLink}#contacto`} className="header-cta">
+        <a href={contactUrl} className="header-cta">
           Cuéntanos tu idea
         </a>
 
@@ -65,7 +65,7 @@ export function SiteHeader({
             >
               Quiénes somos
             </a>
-            <a href={`${homeLink}#contacto`}>Contacto</a>
+            <a href={contactUrl}>Contacto</a>
           </nav>
         </details>
       </div>

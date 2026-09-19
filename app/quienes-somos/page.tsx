@@ -2,8 +2,8 @@
 import type { Metadata } from 'next';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { inquiryEmail } from '@/lib/packages';
-import { basePath } from '@/lib/site';
+import { inquiryUrl } from '@/lib/packages';
+import { basePath, contactUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Quiénes somos',
@@ -65,7 +65,7 @@ export default function AboutPage() {
               en Valladolid. Escuchamos tu idea y coordinamos cada detalle para
               convertirla en un evento bien pensado.
             </p>
-            <a className="action action-primary" href={inquiryEmail()}>
+            <a className="action action-primary" href={inquiryUrl()}>
               Cuéntanos tu evento
             </a>
           </div>
@@ -161,11 +161,11 @@ export default function AboutPage() {
               <h2 id="team-contact-title">Hablemos de tu próximo evento.</h2>
               <p>Cuéntanos tu idea. Le damos forma contigo.</p>
             </div>
-            <a className="action action-ink" href={inquiryEmail()}>
+            <a className="action action-ink" href={inquiryUrl()}>
               Cuéntanos tu evento
             </a>
-            <a className="contact-email" href="mailto:info@feriaarcadeca.es">
-              info@feriaarcadeca.es
+            <a className="contact-email" href={contactUrl}>
+              Formulario de contacto
             </a>
           </div>
         </section>

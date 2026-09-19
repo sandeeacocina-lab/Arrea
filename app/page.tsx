@@ -9,8 +9,8 @@ import {
 } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { inquiryEmail } from '@/lib/packages';
-import { basePath } from '@/lib/site';
+import { inquiryUrl } from '@/lib/packages';
+import { basePath, contactUrl } from '@/lib/site';
 
 const services = [
   {
@@ -129,7 +129,7 @@ export default function Home() {
               experiencia cuidada de principio a fin.
             </p>
             <div className="hero-actions">
-              <a href="#contacto" className="action action-primary">
+              <a href={contactUrl} className="action action-primary">
                 Cuéntanos tu evento
               </a>
               <a href={`${basePath}/proyectos/`} className="text-action">
@@ -350,11 +350,11 @@ export default function Home() {
                 tienes en mente.
               </p>
             </div>
-            <a className="action action-ink" href={inquiryEmail()}>
+            <a className="action action-ink" href={inquiryUrl()}>
               Cuéntanos tu evento
             </a>
-            <a className="contact-email" href="mailto:info@feriaarcadeca.es">
-              info@feriaarcadeca.es
+            <a className="contact-email" href={contactUrl}>
+              Formulario de contacto
             </a>
           </div>
         </section>

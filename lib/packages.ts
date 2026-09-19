@@ -1,3 +1,5 @@
+import { contactUrl } from './site';
+
 export const packages = [
   {
     id: 'impulso',
@@ -57,7 +59,7 @@ export const packages = [
   },
 ] as const;
 
-export function inquiryEmail(packageName?: string) {
+export function inquiryUrl(packageName?: string) {
   const subject = packageName
     ? `Consulta sobre el paquete ${packageName} · ARREA`
     : 'Propuesta para un evento · ARREA';
@@ -77,5 +79,5 @@ export function inquiryEmail(packageName?: string) {
     '',
     'Gracias.',
   ].join('\n');
-  return `mailto:info@feriaarcadeca.es?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  return `${contactUrl}?${new URLSearchParams({ subject, body })}`;
 }

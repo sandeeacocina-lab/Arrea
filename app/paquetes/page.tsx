@@ -10,8 +10,8 @@ import {
 } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { inquiryEmail, packages } from '@/lib/packages';
-import { basePath } from '@/lib/site';
+import { inquiryUrl, packages } from '@/lib/packages';
+import { basePath, contactUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Paquetes',
@@ -104,7 +104,7 @@ export default function PackagesPage() {
                   </div>
                   <a
                     className="action package-action"
-                    href={inquiryEmail(item.name)}
+                    href={inquiryUrl(item.name)}
                   >
                     Consultar {item.name}
                   </a>
@@ -147,11 +147,11 @@ export default function PackagesPage() {
                 asistentes.
               </p>
             </div>
-            <a className="action action-ink" href={inquiryEmail()}>
+            <a className="action action-ink" href={inquiryUrl()}>
               Solicitar propuesta
             </a>
-            <a className="contact-email" href="mailto:info@feriaarcadeca.es">
-              info@feriaarcadeca.es
+            <a className="contact-email" href={contactUrl}>
+              Formulario de contacto
             </a>
           </div>
         </section>

@@ -4,7 +4,7 @@ Nueva web de Arrea Eventos, la empresa simulada de Asistencia a la Dirección de
 
 La web presenta ARREA como una agencia de eventos empresariales: servicios, paquetes comerciales, forma de trabajo y contacto. El pie identifica su finalidad educativa y el uso de inteligencia artificial.
 
-La página `/paquetes/` compara Impulso, Encuentro y Conexión, con precios de referencia, inclusiones y límites. Los botones de consulta abren un correo con el paquete y los datos del evento por completar; no envían mensajes automáticamente.
+La página `/paquetes/` compara Impulso, Encuentro y Conexión, con precios de referencia, inclusiones y límites. Todos los enlaces comerciales de contacto abren el formulario de ARREA en la Central de Simulación. Las consultas de paquetes conservan el asunto y los datos del evento por completar. Al enviar el formulario, el mensaje y sus adjuntos llegan al buzón compartido de prácticas; no se envían correos reales. Solo se deben utilizar datos ficticios.
 
 El archivo conserva los proyectos anteriores, sus páginas, materiales y autorías.
 
