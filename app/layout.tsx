@@ -20,33 +20,33 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://sandeeacocina-lab.github.io'),
   title: {
-    default: 'Arrea Eventos | Un solo punto, todo tu evento',
-    template: '%s | Arrea Eventos',
+    default: 'ARREA Eventos | Un solo punto, todo tu evento',
+    template: '%s | ARREA Eventos',
   },
   description:
     'ARREA Eventos. Organización, coordinación y comunicación de eventos empresariales en Valladolid. Un solo punto, todo tu evento.',
   icons: {
-    icon: `${basePath}/favicon.svg`,
+    icon: `${basePath}/favicon-arrea.svg`,
   },
   openGraph: {
-    title: 'Arrea Eventos | Un solo punto, todo tu evento',
-    description: 'Ideas que se organizan. Eventos que dejan huella.',
+    title: 'ARREA Eventos | Un solo punto, todo tu evento',
+    description: 'Un solo punto, todo tu evento. Una persona de contacto y todo un equipo coordinando cada detalle.',
     type: 'website',
     locale: 'es_ES',
     images: [
       {
-        url: `${basePath}/og.png`,
-        width: 1732,
-        height: 909,
-        alt: 'Arrea Eventos — Ideas que se organizan. Eventos que dejan huella.',
+        url: `${basePath}/og-identidad-2026.png`,
+        width: 1200,
+        height: 630,
+        alt: 'ARREA Eventos. Un solo punto, todo tu evento.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Arrea Eventos | Un solo punto, todo tu evento',
-    description: 'Ideas que se organizan. Eventos que dejan huella.',
-    images: [`${basePath}/og.png`],
+    title: 'ARREA Eventos | Un solo punto, todo tu evento',
+    description: 'Un solo punto, todo tu evento. Una persona de contacto y todo un equipo coordinando cada detalle.',
+    images: [`${basePath}/og-identidad-2026.png`],
   },
 };
 

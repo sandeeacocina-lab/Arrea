@@ -11,8 +11,8 @@ const projectImage = `${basePath}/images/projects/expods/exposicion.jpeg`;
 export const metadata: Metadata = {
   title: project.title,
   description: project.summary,
-  openGraph: { title: `${project.title} | Arrea Eventos`, description: project.summary, images: [{ url: projectImage, width: 1280, height: 887, alt: 'La exposición de los ODS en el IES Arca Real' }] },
-  twitter: { card: 'summary_large_image', title: `${project.title} | Arrea Eventos`, description: project.summary, images: [projectImage] },
+  openGraph: { title: `${project.title} | ARREA Eventos`, description: project.summary, images: [{ url: projectImage, width: 1280, height: 887, alt: 'La exposición de los ODS en el IES Arca Real' }] },
+  twitter: { card: 'summary_large_image', title: `${project.title} | ARREA Eventos`, description: project.summary, images: [projectImage] },
 };
 
 export default function ExpoOdsPage() {

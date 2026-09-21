@@ -1,4 +1,4 @@
-/* oxlint-disable next/no-img-element -- Keep the original logo files on static GitHub Pages. */
+/* oxlint-disable next/no-img-element -- Use the approved vector logo on static GitHub Pages. */
 import { basePath } from '@/lib/site';
 
 export function SiteFooter() {
@@ -11,9 +11,12 @@ export function SiteFooter() {
           className="footer-brand"
         >
           <img
-            src={`${basePath}/images/arrea-logo-light.png`}
-            alt="Arrea Eventos"
+            src={`${basePath}/images/arrea-identidad-inversa.svg`}
+            alt="ARREA Eventos"
+            width={460}
+            height={432}
           />
+          <span className="footer-tagline">Un solo punto, todo tu evento</span>
         </a>
         <div className="footer-disclosure">
           <p>
@@ -31,6 +34,11 @@ export function SiteFooter() {
         </div>
         <p>© {new Date().getFullYear()} ARREA Eventos</p>
       </div>
+      <p className="brand-authorship shell">
+        Autoría y dirección pedagógica: Sandra Mangas. Identidad basada en la
+        propuesta de una alumna. Apoyo de IA en adaptación visual y desarrollo,
+        bajo las indicaciones, revisión y criterio de la autora.
+      </p>
     </footer>
   );
 }

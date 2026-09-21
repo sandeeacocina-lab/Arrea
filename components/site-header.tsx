@@ -1,4 +1,4 @@
-/* oxlint-disable next/no-img-element -- Keep the original logo files on static GitHub Pages. */
+/* oxlint-disable next/no-img-element -- Use the approved vector logo on static GitHub Pages. */
 import { basePath, contactUrl } from '@/lib/site';
 
 export function SiteHeader({
@@ -17,7 +17,7 @@ export function SiteHeader({
           aria-label="Arrea Eventos, inicio"
           className="brand-link"
         >
-          <img src={`${basePath}/images/arrea-logo.png`} alt="Arrea Eventos" />
+          <img src={`${basePath}/images/arrea-identidad-principal.svg`} alt="ARREA Eventos" width={460} height={432} />
         </a>
 
         <nav className="desktop-nav" aria-label="Navegación principal">

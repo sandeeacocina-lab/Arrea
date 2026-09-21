@@ -119,14 +119,14 @@ export default function Home() {
           <div className="hero-copy hero-enter">
             <p className="eyebrow">Eventos empresariales · Valladolid</p>
             <h1 id="hero-title">
-              Ideas que se organizan.
+              Un solo punto,
               <br />
-              <em>Eventos que dejan huella.</em>
+              <em>todo tu evento.</em>
             </h1>
             <p className="hero-intro">
-              En ARREA diseñamos y coordinamos eventos que conectan a las
-              empresas con sus públicos. Transformamos tus objetivos en una
-              experiencia cuidada de principio a fin.
+              En ARREA diseñamos y coordinamos eventos empresariales. Una persona
+              de contacto y todo un equipo que conecta cada detalle, de principio
+              a fin.
             </p>
             <div className="hero-actions">
               <a href={contactUrl} className="action action-primary">
@@ -152,9 +152,9 @@ export default function Home() {
               <strong>2021</strong>
             </div>
             <div className="hero-note">
-              Un solo punto,
+              Un contacto.
               <br />
-              todo tu evento
+              Todo un equipo.
             </div>
           </div>
         </section>

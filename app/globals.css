@@ -1471,3 +1471,49 @@ summary:focus-visible {
   .team-history { padding-block: 30px; }
   .packages-banner-inner::after { right: -75px; width: 200px; opacity: .9; }
 }
+
+/* Identidad ARREA 3.0: cuatro esquinas y punto fucsia. */
+.site-header { background: #f7f2eb; }
+.header-inner { min-height: 140px; grid-template-columns: 112px minmax(0, 1fr) auto; gap: 22px; }
+.brand-link { width: 112px; padding: 8px 6px; }
+.brand-link img { display: block; width: 100px; height: 94px; object-fit: contain; }
+.desktop-nav { justify-content: center; gap: 22px; font-size: .82rem; }
+.header-cta { font-size: .82rem; white-space: nowrap; }
+.home .hero-copy, .home .hero-visual { min-width: 0; }
+.home .hero-visual { width: 100%; max-width: 550px; margin-inline: auto; padding: 18px 0 30px 12px; }
+.home .photo-frame { position: relative; width: 100%; height: auto; min-height: 0; aspect-ratio: 1.12; padding: 0; background: transparent; border: 0; border-radius: 5px; overflow: visible; box-shadow: none; }
+.home .photo-frame img { position: absolute; inset: 11px; width: calc(100% - 22px); height: calc(100% - 22px); border-radius: 3px; object-fit: cover; object-position: 58% center; }
+.home .photo-frame::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(#15120f, #15120f) top left/28px 2px no-repeat, linear-gradient(#15120f, #15120f) top left/2px 28px no-repeat, linear-gradient(#15120f, #15120f) top right/28px 2px no-repeat, linear-gradient(#15120f, #15120f) top right/2px 28px no-repeat, linear-gradient(#15120f, #15120f) bottom left/28px 2px no-repeat, linear-gradient(#15120f, #15120f) bottom left/2px 28px no-repeat, linear-gradient(#15120f, #15120f) bottom right/28px 2px no-repeat, linear-gradient(#15120f, #15120f) bottom right/2px 28px no-repeat; }
+.hero-visual::before { inset: 0 8% 15px 0; border-radius: 44% 44% 9% 9%; }
+.hero-note { bottom: 8px; left: 0; right: auto; z-index: 2; max-width: calc(100% - 20px); color: #fff; background: #15120f; border-radius: 2px; }
+.hero-stamp, .hero-stamp span, .hero-stamp strong { color: #fff; }
+.hero-actions { flex-wrap: wrap; }
+.action-primary, .action-ink, .header-cta { color: #fff; }
+.team-hero-photo > img { border-radius: 4px; }
+.team-hero-photo::before { border-radius: 3px; transform: rotate(-2deg); }
+.brand-corners::after { content: ''; position: absolute; inset: 12px; border: 2px solid #fff; pointer-events: none; clip-path: polygon(0 0, 25px 0, 25px 2px, 2px 2px, 2px 25px, 0 25px, 0 0, 100% 0, 100% 25px, calc(100% - 2px) 25px, calc(100% - 2px) 2px, calc(100% - 25px) 2px, calc(100% - 25px) 0); }
+.footer-inner { grid-template-columns: 200px minmax(0, 1fr) auto; align-items: start; gap: 28px; }
+.footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; width: auto; max-width: 200px; }
+.footer-brand img { display: block; width: 110px; height: 104px; object-fit: contain; }
+.footer-tagline { max-width: 190px; color: #fff; font-size: 20px; line-height: 1.25; font-weight: 500; }
+.footer-disclosure { min-width: 0; }
+.brand-authorship { margin-top: 25px; padding-bottom: 10px; color: #bdb4aa; font-size: 12px; line-height: 1.65; }
+.mobile-menu summary { min-height: 44px; display: flex; align-items: center; }
+.mobile-menu nav { z-index: 45; }
+.mobile-menu nav a { min-height: 32px; }
+@media (max-width: 900px) {
+  .header-inner { grid-template-columns: 112px minmax(0, 1fr) auto; }
+  .mobile-menu { grid-column: 3; }
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer-inner > p:last-child { grid-column: 1; }
+  .footer-brand { max-width: none; flex-direction: row; align-items: center; }
+}
+@media (max-width: 520px) {
+  .header-inner { min-height: 128px; gap: 12px; }
+  .home .hero-visual { padding-left: 0; padding-bottom: 34px; }
+  .home .photo-frame { aspect-ratio: 1.05; }
+  .home .hero h1 { font-size: clamp(39px, 11vw, 50px); }
+  .footer-brand { gap: 20px; }
+  .footer-tagline { font-size: 17px; }
+  .team-hero-photo::before { inset: -8px -5px 20px 20px; }
+}

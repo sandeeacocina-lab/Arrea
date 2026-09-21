@@ -69,7 +69,7 @@ export default function AboutPage() {
               Cuéntanos tu evento
             </a>
           </div>
-          <div className="team-hero-photo">
+          <div className="team-hero-photo brand-corners">
             <img
               src={`${basePath}/images/equipo/equipo.webp`}
               alt="Diego, Álvaro, Lucía y Nora, el equipo de ARREA Eventos"
