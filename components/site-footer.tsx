@@ -1,9 +1,21 @@
 /* oxlint-disable next/no-img-element -- Use the approved vector logo on static GitHub Pages. */
 import { basePath } from '@/lib/site';
+import { inquiryUrl } from '@/lib/packages';
 
-export function SiteFooter() {
+export function SiteFooter({ showContact = false }: { showContact?: boolean }) {
   return (
     <footer className="site-footer">
+      {showContact && (
+        <section id="contacto" className="shell footer-contact" aria-labelledby="contact-title" data-reveal>
+          <div>
+            <h2 id="contact-title">Hablemos de tu próximo evento.</h2>
+            <p>Cuéntanos tu idea. Empezamos por escucharte.</p>
+          </div>
+          <a className="action footer-contact-action" href={inquiryUrl()}>
+            Cuéntanos tu evento
+          </a>
+        </section>
+      )}
       <div className="shell footer-inner">
         <a
           href={`${basePath}/`}
@@ -34,11 +46,6 @@ export function SiteFooter() {
         </div>
         <p>© {new Date().getFullYear()} ARREA Eventos</p>
       </div>
-      <p className="brand-authorship shell">
-        Autoría y dirección pedagógica: Sandra Mangas. Identidad basada en la
-        propuesta de una alumna. Apoyo de IA en adaptación visual y desarrollo,
-        bajo las indicaciones, revisión y criterio de la autora.
-      </p>
     </footer>
   );
 }

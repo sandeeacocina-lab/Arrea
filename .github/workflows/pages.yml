@@ -48,7 +48,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Construir la web
-        run: pnpm build
+        run: pnpm build:pages
 
       - name: Preparar las páginas internas
         run: node scripts/prepare-github-pages.mjs

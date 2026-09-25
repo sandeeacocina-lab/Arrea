@@ -1,53 +1,39 @@
 /* oxlint-disable next/no-img-element -- Preserve the original brand assets on static GitHub Pages. */
-import {
-  CalendarDays,
-  ChartColumnIncreasing,
-  ClipboardCheck,
-  Megaphone,
-  Sparkles,
-  UsersRound,
-} from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
-import { inquiryUrl } from '@/lib/packages';
 import { basePath, contactUrl } from '@/lib/site';
 
 const services = [
   {
     title: 'Eventos corporativos',
     text: 'Jornadas, encuentros profesionales, ferias y presentaciones de empresa.',
-    icon: CalendarDays,
   },
   {
     title: 'Secretaría técnica',
     text: 'Inscripciones, agendas y atención a asistentes y ponentes.',
-    icon: UsersRound,
   },
   {
     title: 'Comunicación creativa',
     text: 'La imagen y los materiales que representan a tu empresa.',
-    icon: Sparkles,
   },
   {
     title: 'Protocolo y acogida',
     text: 'Invitaciones, acreditaciones y una bienvenida cuidada.',
-    icon: ClipboardCheck,
   },
   {
     title: 'Difusión y contenidos',
     text: 'Mensajes y publicaciones antes, durante y después.',
-    icon: Megaphone,
   },
   {
     title: 'Evaluación y resultados',
     text: 'Opiniones, objetivos y propuestas de mejora.',
-    icon: ChartColumnIncreasing,
   },
 ];
 const archive = [
   {
     slug: 'expods',
     title: 'ExpoODS',
+    lines: ['Expo', 'ODS'],
     date: '2022–2023',
     text: 'Exposición digital · eTwinning',
     theme: 'primary',
@@ -55,6 +41,7 @@ const archive = [
   {
     slug: 'feria-arcadeca-2022',
     title: 'Feria ARCADECA',
+    lines: ['Feria', 'ARCADECA'],
     date: '2022',
     text: 'Feria híbrida',
     theme: 'light',
@@ -62,6 +49,7 @@ const archive = [
   {
     slug: 'arca-impulsa-fp',
     title: 'Arca Impulsa FP',
+    lines: ['Arca', 'Impulsa FP'],
     date: '2023–2026',
     text: 'Jornadas de FP',
     theme: 'sand',
@@ -69,6 +57,7 @@ const archive = [
   {
     slug: 'voces-que-inspiran',
     title: 'Voces que inspiran',
+    lines: ['Voces que', 'inspiran'],
     date: '2025',
     text: 'Jornada educativa',
     theme: 'ink',
@@ -111,103 +100,53 @@ export default function Home() {
       </a>
       <SiteHeader home />
       <main className="home">
-        <section
-          id="contenido"
-          className="hero shell"
-          aria-labelledby="hero-title"
-        >
-          <div className="hero-copy hero-enter">
-            <p className="eyebrow">Eventos empresariales · Valladolid</p>
-            <h1 id="hero-title">
-              Un solo punto,
-              <br />
-              <em>todo tu evento.</em>
-            </h1>
-            <p className="hero-intro">
-              En ARREA diseñamos y coordinamos eventos empresariales. Una persona
-              de contacto y todo un equipo que conecta cada detalle, de principio
-              a fin.
-            </p>
-            <div className="hero-actions">
-              <a href={contactUrl} className="action action-primary">
-                Cuéntanos tu evento
-              </a>
-              <a href={`${basePath}/proyectos/`} className="text-action">
-                Ver proyectos
-              </a>
+        <section id="contenido" className="cinema-hero cinema-hero-alternative" aria-labelledby="hero-title">
+          <img className="cinema-photo" src={`${basePath}/images/arrea-hero-networking-r06.webp`} alt="Profesionales conversando durante un encuentro de networking empresarial" width={1774} height={887} fetchPriority="high" />
+          <div className="cinema-shade" aria-hidden="true" />
+          <div className="shell cinema-content">
+            <div className="cinema-copy" data-reveal>
+              <p className="eyebrow">Eventos empresariales · Valladolid</p>
+              <h1 id="hero-title">Un solo punto,<br />todo tu evento.</h1>
+              <p className="cinema-promise">Una persona de contacto.<br />Todo un equipo detrás.</p>
+              <div className="cinema-actions">
+                <a href={contactUrl} className="action action-primary">Cuéntanos tu evento</a>
+                <a href={`${basePath}/proyectos/`} className="text-action">Ver proyectos</a>
+              </div>
             </div>
-          </div>
-          <div className="hero-visual hero-enter hero-enter-late">
-            <div className="photo-frame">
-              <img
-                src={`${basePath}/images/arrea-evento-editorial.png`}
-                alt="Preparación de un evento corporativo con escenario, señalética y zona de recepción"
-                width={1732}
-                height={924}
-                fetchPriority="high"
-              />
-            </div>
-            <div className="hero-stamp" aria-label="Desde 2021">
-              <span>Desde</span>
-              <strong>2021</strong>
-            </div>
-            <div className="hero-note">
-              Un contacto.
-              <br />
-              Todo un equipo.
+            <div className="cinema-viewfinder" aria-hidden="true" data-reveal>
+              <span className="recording-label">REC</span>
+              <img src={`${basePath}/images/arrea-identidad-inversa.svg`} alt="" width={460} height={432} />
+              <span className="recording-time">00:00:26</span>
             </div>
           </div>
         </section>
-        <div className="ticker">
-          <span className="sr-only">
-            Planificamos, coordinamos, comunicamos y conectamos.
-          </span>
-          <div className="ticker-track" aria-hidden="true">
-            {[0, 1].map((copy) => (
-              <div className="ticker-group" key={copy}>
-                <span>Planificamos</span>
-                <i>●</i>
-                <span>Coordinamos</span>
-                <i>●</i>
-                <span>Comunicamos</span>
-                <i>●</i>
-                <span>Conectamos</span>
-                <i>●</i>
-              </div>
-            ))}
-          </div>
-        </div>
         <section
           id="servicios"
-          className="services-section shell section-space"
+          className="services-section section-space"
           aria-labelledby="services-title"
         >
-          <div className="section-heading" data-reveal>
-            <p className="eyebrow">Qué hacemos</p>
-            <h2 id="services-title">Todo lo necesario para tu evento.</h2>
-          </div>
-          <div className="service-grid">
-            {services.map(({ title, text, icon: Icon }, index) => (
-              <article className="service-card" key={title} data-reveal>
-                <span className="service-number">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <Icon aria-hidden="true" />
-                <div>
+          <div className="shell services-layout">
+            <div className="section-heading" data-reveal>
+              <h2 id="services-title">Todo lo necesario para tu evento.</h2>
+              <p className="section-lead">Seis servicios y una sola persona que los coordina.</p>
+            </div>
+            <div className="service-grid">
+              {services.map(({ title, text }) => (
+                <article className="service-card" key={title} data-reveal>
                   <h3>{title}</h3>
                   <p>{text}</p>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
         </section>
         <section
+          id="paquetes"
           className="packages-banner"
           aria-labelledby="packages-cta-title"
         >
           <div className="shell packages-banner-inner">
-            <div>
-              <p className="eyebrow">Nuestros paquetes</p>
+            <div className="packages-banner-copy" data-reveal>
               <h2 id="packages-cta-title">
                 Encuentra el paquete que encaja contigo.
               </h2>
@@ -215,11 +154,21 @@ export default function Home() {
                 Comunicación, jornadas y convenciones con alcance y precio
                 definidos.
               </p>
-              <p className="package-names">Impulso · Encuentro · Conexión</p>
+              <a className="action action-ink" href={`${basePath}/paquetes/`}>
+                Consulta los paquetes
+              </a>
             </div>
-            <a className="action action-ink" href={`${basePath}/paquetes/`}>
-              Consulta los paquetes
-            </a>
+            <nav className="package-lineup" aria-label="Nuestros paquetes" data-reveal>
+              <a href={`${basePath}/paquetes/#impulso`}>
+                <strong>Impulso</strong><span>Comunicación</span>
+              </a>
+              <a href={`${basePath}/paquetes/#encuentro`}>
+                <strong>Encuentro</strong><span>Jornadas</span>
+              </a>
+              <a href={`${basePath}/paquetes/#conexion`}>
+                <strong>Conexión</strong><span>Convenciones</span>
+              </a>
+            </nav>
           </div>
         </section>
         <section
@@ -228,7 +177,7 @@ export default function Home() {
           aria-labelledby="archive-title"
         >
           <div className="section-heading" data-reveal>
-            <p className="eyebrow">Archivo Arrea</p>
+            <p className="eyebrow">Proyectos de años anteriores</p>
             <h2 id="archive-title">
               Proyectos que forman parte de nuestra historia.
             </h2>
@@ -245,9 +194,11 @@ export default function Home() {
                 key={project.slug}
                 data-reveal
               >
-                <p>{project.date}</p>
-                <h3>{project.title}</h3>
-                <span>{project.text}</span>
+                <p className="archive-date">{project.date}</p>
+                <h3 aria-label={project.title}>
+                  {project.lines.map((line) => <span key={line}>{line}</span>)}
+                </h3>
+                <span className="archive-format">{project.text}</span>
               </a>
             ))}
           </div>
@@ -262,55 +213,61 @@ export default function Home() {
         </section>
         <section
           id="aula"
-          className="learning-section section-space"
+          className="learning-section learning-photo-section section-space"
           aria-labelledby="learning-title"
         >
-          <div className="shell">
-            <div className="learning-intro" data-reveal>
-              <p className="eyebrow">Cómo trabajamos</p>
-              <h2 id="learning-title">
-                Tu objetivo marca el comienzo.
-                <br />
-                <em>Nosotros organizamos el camino.</em>
-              </h2>
-            </div>
-            <div className="learning-grid">
-              <article data-reveal>
-                <h3>01 · Entendemos tu idea</h3>
-                <p>
-                  Definimos contigo el objetivo, el público, el formato y el
-                  presupuesto.
-                </p>
-              </article>
-              <article data-reveal>
-                <h3>02 · Preparamos cada detalle</h3>
-                <p>
-                  Coordinamos recursos, proveedores, programa y atención a
-                  invitados.
-                </p>
-              </article>
-              <article data-reveal>
-                <h3>03 · Coordinamos y evaluamos</h3>
-                <p>
-                  Supervisamos el evento, atendemos incidencias y revisamos los
-                  resultados.
-                </p>
-              </article>
+          <div className="shell learning-layout">
+            <figure className="learning-photo" data-reveal>
+              <img
+                src={`${basePath}/images/arrea-acreditaciones.webp`}
+                alt="Acreditaciones de organización ARREA en blanco y negro, con el lema Un solo punto, todo tu evento"
+                width={1536}
+                height={1024}
+                loading="lazy"
+              />
+              <figcaption>Simulación visual generada con IA.</figcaption>
+            </figure>
+            <div className="learning-content" data-reveal>
+              <h2 id="learning-title">Tu objetivo marca el comienzo.</h2>
+              <p className="process-subtitle">Nosotros organizamos el camino.</p>
+              <ol className="process-list">
+                <li>
+                  <span className="process-number" aria-hidden="true">01</span>
+                  <div>
+                    <h3>Entendemos tu idea</h3>
+                    <p>Definimos contigo el objetivo, el público, el formato y el presupuesto.</p>
+                  </div>
+                </li>
+                <li>
+                  <span className="process-number" aria-hidden="true">02</span>
+                  <div>
+                    <h3>Preparamos cada detalle</h3>
+                    <p>Coordinamos recursos, proveedores, programa y atención a invitados.</p>
+                  </div>
+                </li>
+                <li>
+                  <span className="process-number" aria-hidden="true">03</span>
+                  <div>
+                    <h3>Coordinamos y evaluamos</h3>
+                    <p>Supervisamos el evento, atendemos incidencias y revisamos los resultados.</p>
+                  </div>
+                </li>
+              </ol>
             </div>
           </div>
         </section>
         <section
           id="opiniones"
-          className="testimonials-section shell section-space"
+          className="testimonials-section section-space"
           aria-labelledby="testimonials-title"
           aria-describedby="testimonials-disclosure"
         >
+          <div className="shell testimonials-inner">
           <div className="section-heading">
             <p className="eyebrow">Nuestros clientes</p>
             <h2 id="testimonials-title">
               Muchas experiencias.
-              <br />
-              <em>Un mismo punto de encuentro.</em>
+              <span className="testimonials-title-line">Un mismo punto de encuentro.</span>
             </h2>
           </div>
           <div className="testimonials-grid">
@@ -336,30 +293,10 @@ export default function Home() {
           <p id="testimonials-disclosure" className="testimonials-disclosure">
             Opiniones y nombres simulados para este proyecto educativo.
           </p>
-        </section>
-        <section
-          id="contacto"
-          className="contact-section"
-          aria-labelledby="contact-title"
-        >
-          <div className="shell commercial-contact">
-            <div>
-              <h2 id="contact-title">Hablemos de tu próximo evento.</h2>
-              <p>
-                Cuéntanos qué quieres organizar, a quién va dirigido y qué fecha
-                tienes en mente.
-              </p>
-            </div>
-            <a className="action action-ink" href={inquiryUrl()}>
-              Cuéntanos tu evento
-            </a>
-            <a className="contact-email" href={contactUrl}>
-              Formulario de contacto
-            </a>
           </div>
         </section>
       </main>
-      <SiteFooter />
+      <SiteFooter showContact />
     </>
   );
 }

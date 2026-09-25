@@ -60,7 +60,7 @@ export const projects: Project[] = [
       'Sostenibilidad y ciudadanía europea',
       'Gestión de contenidos web y multimedia',
     ],
-    poster: { top: 'EXP', script: 'los', bottom: 'ODS', mark: '2030' },
+    poster: { top: 'Expo', bottom: 'ODS', mark: '2022–2023' },
     theme: 'raspberry',
     sources: [
       { label: 'Visitar la experiencia ExpoODS', url: 'https://expods.decasarre.es/' },
@@ -112,7 +112,7 @@ export const projects: Project[] = [
       'Comunicación profesional y redes sociales',
       'Iniciativa emprendedora y relación comercial',
     ],
-    poster: { top: 'ARCA', script: 'en', bottom: 'RED', mark: '2022' },
+    poster: { top: 'Feria', bottom: 'ARCADECA', mark: '2022' },
     theme: 'gold',
     sources: [
       {
@@ -168,8 +168,8 @@ export const projects: Project[] = [
       'Presentación oral y dinamización de grupos',
       'Competencia digital aplicada a la orientación',
     ],
-    poster: { top: 'ARCA', script: 'impulsa', bottom: 'FP', mark: '03' },
-    theme: 'ink',
+    poster: { top: 'Arca', script: 'Impulsa', bottom: 'FP', mark: '2023–2026' },
+    theme: 'paper',
     sources: [
       { label: 'Blog de Arca Impulsa FP', url: 'https://blog-arcaimpulsafp.webnode.es/' },
       {
@@ -218,8 +218,8 @@ export const projects: Project[] = [
       'Producción documental y trazabilidad',
       'Evaluación y mejora continua',
     ],
-    poster: { top: 'VOCES', script: 'que', bottom: 'INSPIRAN', mark: '2025' },
-    theme: 'paper',
+    poster: { top: 'Voces', script: 'que', bottom: 'inspiran', mark: '2025' },
+    theme: 'ink',
     sources: [],
   },
 ];

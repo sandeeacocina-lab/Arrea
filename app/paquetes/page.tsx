@@ -11,7 +11,7 @@ import {
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { inquiryUrl, packages } from '@/lib/packages';
-import { basePath, contactUrl } from '@/lib/site';
+import { basePath } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Paquetes',
@@ -44,7 +44,7 @@ export default function PackagesPage() {
             <span aria-hidden="true">/</span>
             <span aria-current="page">Paquetes</span>
           </nav>
-          <div className="packages-hero-heading">
+          <div className="packages-hero-heading" data-reveal>
             <p className="eyebrow">Paquetes ARREA</p>
             <p className="package-categories">
               Comunicación <span>·</span> Jornadas <span>·</span> Convenciones
@@ -52,7 +52,7 @@ export default function PackagesPage() {
             <h1 id="packages-title">
               Tu objetivo.
               <br />
-              <em>El paquete que lo impulsa.</em>
+              <span className="heading-accent">El paquete que lo impulsa.</span>
             </h1>
             <p className="packages-intro">
               Tres propuestas para comunicar, reunir y conectar. Compara lo que
@@ -69,6 +69,8 @@ export default function PackagesPage() {
               <article
                 className={`package-card package-${item.theme}`}
                 key={item.id}
+                id={item.id}
+                data-reveal
                 aria-labelledby={`${item.id}-title`}
               >
                 <header className="package-card-header">
@@ -119,7 +121,7 @@ export default function PackagesPage() {
           </p>
         </section>
         <section className="package-extras" aria-labelledby="extras-title">
-          <div className="shell package-extras-inner">
+          <div className="shell package-extras-inner" data-reveal>
             <div>
               <h2 id="extras-title">¿Necesitas algo más?</h2>
               <p>Personalizamos la propuesta según tu evento.</p>
@@ -134,29 +136,8 @@ export default function PackagesPage() {
             </ul>
           </div>
         </section>
-        <section className="contact-section" aria-labelledby="proposal-title">
-          <div className="shell commercial-contact">
-            <div>
-              <h2 id="proposal-title">
-                Cuéntanos tu evento.
-                <br />
-                <em>Damos forma a tu propuesta.</em>
-              </h2>
-              <p>
-                Indícanos el paquete que te interesa, la fecha y el número de
-                asistentes.
-              </p>
-            </div>
-            <a className="action action-ink" href={inquiryUrl()}>
-              Solicitar propuesta
-            </a>
-            <a className="contact-email" href={contactUrl}>
-              Formulario de contacto
-            </a>
-          </div>
-        </section>
       </main>
-      <SiteFooter />
+      <SiteFooter showContact />
     </>
   );
 }

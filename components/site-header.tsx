@@ -57,7 +57,7 @@ export function SiteHeader({
             >
               Paquetes
             </a>
-            <a href={`${basePath}/proyectos/`}>Proyectos</a>
+            <a href={`${basePath}/proyectos/`} aria-current={active === 'proyectos' ? 'page' : undefined}>Proyectos</a>
             <a href={`${homeLink}#aula`}>Cómo trabajamos</a>
             <a
               href={`${basePath}/quienes-somos/`}

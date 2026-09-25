@@ -14,6 +14,17 @@ Web pública: [Arrea Eventos](https://sandeeacocina-lab.github.io/Arrea/).
 
 El proyecto está preparado para publicarse automáticamente en GitHub Pages cuando se sube a la rama `main`. En GitHub, la fuente de Pages debe configurarse como **GitHub Actions**.
 
+Para comprobar la exportación antes de publicar:
+
+```bash
+export NEXT_PUBLIC_BASE_PATH=/Arrea
+pnpm build:pages
+node scripts/prepare-github-pages.mjs
+node --experimental-strip-types scripts/check-project-dossiers.mjs
+```
+
+La identidad compartida está en `app/identity-preview.css`. Las entradas se activan al aparecer cada bloque y las tarjetas responden al ratón. El contenido sigue visible sin JavaScript y la preferencia de movimiento reducido desactiva los desplazamientos.
+
 ## Desarrollo local
 
 ```bash

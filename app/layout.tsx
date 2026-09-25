@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { MotionController } from '@/components/motion-controller';
 
 import './globals.css';
+import './identity-preview.css';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 

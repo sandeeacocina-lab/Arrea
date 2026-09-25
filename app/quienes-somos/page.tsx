@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { inquiryUrl } from '@/lib/packages';
-import { basePath, contactUrl } from '@/lib/site';
+import { basePath } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Quiénes somos',
@@ -55,10 +55,10 @@ export default function AboutPage() {
       <SiteHeader active="quienes-somos" />
       <main id="contenido" className="team-page">
         <section className="shell team-hero" aria-labelledby="team-title">
-          <div className="team-hero-copy">
+          <div className="team-hero-copy" data-reveal>
             <p className="eyebrow">Quiénes somos · ARREA Eventos</p>
             <h1 id="team-title">
-              Personas detrás de <em>cada gran encuentro.</em>
+              Personas detrás de <span className="heading-accent">cada gran encuentro.</span>
             </h1>
             <p className="team-intro">
               Somos un equipo de organización, comunicación y protocolo con base
@@ -69,7 +69,7 @@ export default function AboutPage() {
               Cuéntanos tu evento
             </a>
           </div>
-          <div className="team-hero-photo brand-corners">
+          <div className="team-hero-photo" data-reveal>
             <img
               src={`${basePath}/images/equipo/equipo.webp`}
               alt="Diego, Álvaro, Lucía y Nora, el equipo de ARREA Eventos"
@@ -81,7 +81,7 @@ export default function AboutPage() {
         </section>
 
         <section className="team-promise" aria-labelledby="team-promise-title">
-          <div className="shell">
+          <div className="shell" data-reveal>
             <h2 id="team-promise-title">
               Un solo contacto. Todo un equipo detrás.
             </h2>
@@ -94,12 +94,12 @@ export default function AboutPage() {
 
         <section className="shell team-section" aria-labelledby="people-title">
           <p className="eyebrow">Nuestro equipo</p>
-          <h2 id="people-title">
-            Cuatro miradas. <em>Una misma forma de cuidar tu evento.</em>
+          <h2 id="people-title" data-reveal>
+            Cuatro miradas. <span className="heading-accent">Una misma forma de cuidar tu evento.</span>
           </h2>
           <div className="team-grid">
             {team.map((person) => (
-              <article className="team-card" key={person.name}>
+              <article className="team-card" key={person.name} data-reveal>
                 <div
                   className={`team-portrait${person.name === 'Álvaro' ? ' team-portrait-alvaro' : ''}`}
                 >
@@ -123,21 +123,21 @@ export default function AboutPage() {
         <section className="team-values" aria-labelledby="values-title">
           <div className="shell">
             <p className="eyebrow">Lo que nos define</p>
-            <h2 id="values-title">
-              Cercanía para escuchar. <em>Criterio para organizar.</em>
+            <h2 id="values-title" data-reveal>
+              Cercanía para escuchar. <span className="heading-accent">Criterio para organizar.</span>
             </h2>
             <div className="team-values-grid">
-              <article>
+              <article data-reveal>
                 <h3>01 · Claridad desde el principio</h3>
                 <p>Alcance, presupuesto y plazos definidos contigo.</p>
               </article>
-              <article>
+              <article data-reveal>
                 <h3>02 · Coordinación compartida</h3>
                 <p>
                   Una persona de contacto conecta al equipo y a los proveedores.
                 </p>
               </article>
-              <article>
+              <article data-reveal>
                 <h3>03 · Atención a las personas</h3>
                 <p>Cuidamos la comunicación, la acogida y los detalles.</p>
               </article>
@@ -145,32 +145,15 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="shell team-history" aria-labelledby="history-title">
+        <section className="shell team-history" aria-labelledby="history-title" data-reveal>
           <h2 id="history-title">
             Nuestra historia también se cuenta en nuestros proyectos.
           </h2>
           <a href={`${basePath}/proyectos/`}>Ver proyectos anteriores</a>
         </section>
 
-        <section
-          className="contact-section"
-          aria-labelledby="team-contact-title"
-        >
-          <div className="shell commercial-contact">
-            <div>
-              <h2 id="team-contact-title">Hablemos de tu próximo evento.</h2>
-              <p>Cuéntanos tu idea. Le damos forma contigo.</p>
-            </div>
-            <a className="action action-ink" href={inquiryUrl()}>
-              Cuéntanos tu evento
-            </a>
-            <a className="contact-email" href={contactUrl}>
-              Formulario de contacto
-            </a>
-          </div>
-        </section>
       </main>
-      <SiteFooter />
+      <SiteFooter showContact />
     </>
   );
 }

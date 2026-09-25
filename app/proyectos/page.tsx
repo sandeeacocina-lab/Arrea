@@ -18,7 +18,7 @@ export default function ProjectsPage() {
         Saltar al contenido
       </a>
       <SiteHeader active="proyectos" />
-      <main id="contenido">
+      <main id="contenido" className="projects-page">
         <section
           className="shell project-index-hero"
           aria-labelledby="projects-title"
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
           <div data-reveal="left">
             <p className="eyebrow">Archivo Arrea</p>
             <h1 id="projects-title">
-              Proyectos que forman parte de <em>nuestra historia.</em>
+              Proyectos que forman parte de <span className="heading-accent">nuestra historia.</span>
             </h1>
             <p className="project-index-lead">
               Una selección de eventos, encuentros y experiencias digitales que
@@ -39,9 +39,8 @@ export default function ProjectsPage() {
             aria-hidden="true"
             data-reveal="right"
           >
-            <span>AR</span>
-            <strong>chivo</strong>
-            <i>vivo</i>
+            <span>Archivo</span>
+            <strong>vivo.</strong>
             <small>2021—26</small>
           </div>
         </section>
@@ -54,20 +53,20 @@ export default function ProjectsPage() {
             <div className="project-index-heading" data-reveal>
               <p className="eyebrow">Selección de proyectos</p>
               <h2 id="project-list-title">
-                Ideas convertidas en <em>experiencia profesional.</em>
+                Ideas convertidas en <span className="heading-accent">experiencia profesional.</span>
               </h2>
             </div>
-            <div className="project-card-grid" data-reveal="scale">
-              {projects.map((project, index) => (
+            <div className="project-card-grid">
+              {projects.map((project) => (
                 <a
                   key={project.slug}
-                  className={`project-card project-card-${project.theme} ${index === 0 ? 'project-card-featured' : ''}`}
+                  className={`project-card project-card-${project.theme}`}
                   href={`${basePath}/proyectos/${project.slug}/`}
+                  data-reveal
                 >
                   <p>
                     {project.year} · {project.category}
                   </p>
-                  <span className="project-card-code">{project.code}</span>
                   <h3>{project.title}</h3>
                   <span className="project-card-summary">
                     {project.summary}
@@ -89,7 +88,7 @@ export default function ProjectsPage() {
           </div>
         </aside>
       </main>
-      <SiteFooter />
+      <SiteFooter showContact />
     </>
   );
 }

@@ -16,8 +16,8 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
   return (
     <>
       <a className="skip-link" href="#contenido">Saltar al contenido</a>
-      <SiteHeader />
-      <main id="contenido">
+      <SiteHeader active="proyectos" />
+      <main id="contenido" className={`project-detail-page project-${project.theme}`}>
         <header className="project-detail-hero">
           <div className="shell project-breadcrumb">
             <a href={`${basePath}/proyectos/`}>Todos los proyectos</a>
@@ -70,7 +70,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         <section className="shell project-detail-section" data-reveal>
           <header>
             <p className="detail-label">02 / Alcance</p>
-            <h2>Un encargo con <em>muchas piezas.</em></h2>
+            <h2>Un encargo con <span className="heading-accent">muchas piezas.</span></h2>
           </header>
           <ol className="scope-list">
             {project.scope.map((item, index) => (
@@ -83,7 +83,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           <div className="shell project-work-grid" data-reveal>
             <header>
               <p className="detail-label">03 / Trabajo desarrollado</p>
-              <h2>Del plan a los <em>entregables.</em></h2>
+              <h2>Del plan a los <span className="heading-accent">entregables.</span></h2>
             </header>
             <ul>
               {project.work.map((item) => <li key={item}>{item}</li>)}
@@ -94,7 +94,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         <section className="shell project-detail-section process-section" data-reveal>
           <header>
             <p className="detail-label">04 / Proceso</p>
-            <h2>Una idea que toma <em>forma por etapas.</em></h2>
+            <h2>Una idea que toma <span className="heading-accent">forma por etapas.</span></h2>
           </header>
           <ol className="phase-grid">
             {project.phases.map((phase, index) => (
@@ -112,7 +112,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           <div className="shell learning-record-grid" data-reveal>
             <header>
               <p className="detail-label">{dossier ? 'Aprendizaje profesional' : '05 / Aprendizaje profesional'}</p>
-              <h2>Competencias que salen <em>del papel.</em></h2>
+              <h2>Competencias que salen <span className="heading-accent">del papel.</span></h2>
             </header>
             <ul>
               {project.learning.map((item) => <li key={item}>{item}</li>)}
@@ -150,7 +150,7 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
           </a>
         </nav>
       </main>
-      <SiteFooter />
+      <SiteFooter showContact />
     </>
   );
 }

@@ -10,7 +10,7 @@ export function ProjectDossier({ dossier }: { dossier: Dossier }) {
         <header className="dossier-heading" data-reveal>
           <div>
             <p className="detail-label">Experiencias y materiales</p>
-            <h2>El proyecto, <em>por dentro.</em></h2>
+            <h2>El proyecto, <span className="heading-accent">por dentro.</span></h2>
           </div>
           <div className="dossier-intro">
             <p>{dossier.intro}</p>
@@ -78,7 +78,7 @@ export function ProjectDossier({ dossier }: { dossier: Dossier }) {
         <header className="dossier-heading" data-reveal>
           <div>
             <p className="detail-label">Participantes</p>
-            <h2>Un trabajo <em>compartido.</em></h2>
+            <h2>Un trabajo <span className="heading-accent">compartido.</span></h2>
           </div>
           <p className="dossier-intro">{dossier.participantsNote}</p>
         </header>
