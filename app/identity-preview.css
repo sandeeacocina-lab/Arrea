@@ -281,7 +281,7 @@ main [id] { scroll-margin-top: 138px; }
 }
 @media (max-width: 1000px) {
   .shell { width: calc(100% - 48px); }
-  .header-inner { min-height: 88px; grid-template-columns: 84px 1fr auto; }
+  .header-inner { min-height: 118px; grid-template-columns: 120px 1fr auto; }
   .desktop-nav { display: none; }
   .header-cta { justify-self: end; }
   .mobile-menu { display: block; }
@@ -312,6 +312,8 @@ main [id] { scroll-margin-top: 138px; }
   .team-hero h1 { font-size: 48px; }
   .project-index-hero { gap: 40px; }
   .project-index-hero h1 { font-size: 65px; }
+  .project-index-hero, .project-detail-hero-grid { grid-template-columns: 1fr; }
+  .archive-poster, .detail-poster { width: min(100%,580px); margin-inline: auto; }
   .project-detail-copy h1 { font-size: 65px; }
   .detail-poster { font-size: 54px; min-height: 330px; }
   .archive-poster { font-size: 56px; }
