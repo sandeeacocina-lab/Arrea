@@ -45,18 +45,18 @@ main [id] { scroll-margin-top: 138px; }
 .home .package-lineup span { font-size: 18px; line-height: 1.3; }
 .home .package-lineup a:hover strong { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 8px; }
 .home .package-lineup a:focus-visible { outline: 3px solid #d40057; outline-offset: 6px; }
-.home .services-section { display: block; padding-block: 96px 110px; background: #fff; }
+.home .services-section { display: block; padding-block: 96px 110px; background: #f7f2eb; }
 .home .services-layout { display: grid; grid-template-columns: 400px minmax(0,1fr); gap: 96px; }
 .home .services-section .section-heading h2 { font-size: 56px; line-height: 1.02; letter-spacing: -.045em; }
-.home .services-section .section-lead { margin-top: 28px; font-size: 20px; line-height: 1.5; }
+.home .services-section .section-lead { margin-top: 28px; font-size: 20px; line-height: 1.5; color: #15120f; }
 .home .service-grid { margin: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 48px 64px; border: 0; }
 .home .service-card { display: block; min-height: 130px; padding: 24px 0 0; border: 0; border-top: 2px solid #15120f; background: transparent; border-radius: 0; }
 .home .service-card:hover { transform: none; background: transparent; }
 .home .service-card h3 { margin: 0 0 14px; font-size: 26px; line-height: 1.12; letter-spacing: -.025em; }
-.home .service-card p { margin: 0; font-size: 18px; line-height: 1.5; color: #625a53; }
+.home .service-card p { margin: 0; font-size: 18px; line-height: 1.5; color: #15120f; }
 .home .archive-section { border: 0; padding-block: 96px 64px; }
 .home .archive-section .section-heading h2 { max-width: 970px; font-size: 64px; line-height: 1.03; }
-.home .archive-section .section-lead { font-size: 20px; max-width: 760px; }
+.home .archive-section .section-lead { font-size: 20px; max-width: 760px; color: #15120f; }
 .home .archive-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin-top: 48px; }
 .home .archive-card, .archive-card::before { border-radius: 0; box-shadow: none; }
 .archive-card::before { content: none; }
@@ -76,17 +76,17 @@ main [id] { scroll-margin-top: 138px; }
 .home .learning-photo img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; object-position: center; }
 .home .learning-photo figcaption { margin-top: 12px; font-size: 12px; line-height: 1.5; color: #e9dfd3; }
 .home .learning-content h2 { margin: 0; font-size: 54px; line-height: 1.03; letter-spacing: -.045em; color: #fff; }
-.home .process-subtitle { margin: 16px 0 40px; font-family: inherit; font-style: normal; font-size: 26px; font-weight: 400; line-height: 1.4; color: #c9bfb4; }
+.home .process-subtitle { margin: 16px 0 40px; font-family: inherit; font-style: normal; font-size: 26px; font-weight: 400; line-height: 1.4; color: #e9dfd3; }
 .home .process-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 30px; }
 .home .process-list li { display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 24px; align-items: start; }
 .home .process-number { font-size: 42px; line-height: 1; font-weight: 400; color: #d40057; letter-spacing: -.04em; }
 .home .process-list h3 { margin: 0 0 8px; font-size: 24px; line-height: 1.2; letter-spacing: -.02em; color: #fff; }
-.home .process-list p { margin: 0; font-size: 17px; line-height: 1.55; color: #c9bfb4; }
+.home .process-list p { margin: 0; font-size: 17px; line-height: 1.55; color: #e9dfd3; }
 .home .testimonials-section { padding-block: 96px; background: #f7f2eb; }
 .home .testimonials-section .section-heading h2 { width: 100%; max-width: none; font-size: 56px; line-height: 1.08; }
 .home .testimonials-title-line { display: block; width: 100%; margin-top: 9px; font-size: 44px; font-weight: 400; letter-spacing: -.04em; }
 .home .testimonials-grid { grid-template-columns: 1.05fr 1fr; gap: 24px; margin-top: 44px; }
-.home .testimonial-card { padding: 36px 40px; border: 0; border-radius: 8px; box-shadow: none; background: #fff; color: #15120f; }
+.home .testimonial-card { padding: 36px 40px; border: 0; border-radius: 8px; box-shadow: none; background: #e9dfd3; color: #15120f; }
 .home .testimonial-card-featured { position: relative; grid-row: span 2; padding: 44px 48px 132px; background: #d40057; color: #fff; }
 .home .testimonial-card-warm { background: #ffcf40; }
 .home .testimonial-card .testimonial-stars { margin: 0 0 22px; font-size: 18px; letter-spacing: .18em; color: #d40057; }
@@ -95,18 +95,18 @@ main [id] { scroll-margin-top: 138px; }
 .home .testimonial-card blockquote { margin: 0 0 28px; font-family: inherit; font-style: normal; font-weight: 400; font-size: 25px; line-height: 1.4; }
 .home .testimonial-card-featured blockquote { font-size: 40px; font-weight: 500; line-height: 1.22; letter-spacing: -.025em; }
 .home .testimonial-card figcaption { gap: 6px; font-size: 19px; line-height: 1.4; }
-.home .testimonial-card figcaption span { font-size: 15px; color: #625a53; }
+.home .testimonial-card figcaption span { font-size: 15px; color: #15120f; }
 .home .testimonial-card-featured figcaption { position: absolute; left: 48px; right: 48px; bottom: 44px; }
 .home .testimonial-card-featured figcaption span { color: #fff; }
 .home .testimonial-card-warm figcaption span { color: #15120f; }
-.home .testimonials-disclosure { max-width: none; margin-top: 36px; font-size: 13px; }
+.home .testimonials-disclosure { max-width: none; margin-top: 36px; font-size: 13px; color: #15120f; }
 .contact-section { background: #d40057; color: #fff; padding-block: 70px; }
 .contact-section h2 { font-size: 57px; line-height: 1.06; }
 .contact-section h2 em { color: #fff; }
 .commercial-contact > div p, .contact-email { color: #fff; }
 .contact-section .action-ink { background: #f7f2eb; color: #15120f; }
 .site-footer { background: #15120f; padding-block: 45px 24px; }
-.footer-contact { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px solid #625a53; color: #fff; }
+.footer-contact { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-bottom: 40px; margin-bottom: 40px; border-bottom: 1px solid #e9dfd3; color: #fff; }
 .footer-contact > div { flex: 1; min-width: 0; }
 .footer-contact h2 { margin: 0; max-width: none; font-size: 34px; line-height: 1.12; letter-spacing: -.035em; }
 .footer-contact p { margin: 14px 0 0; font-size: 17px; color: #e9dfd3; }
@@ -115,6 +115,7 @@ main [id] { scroll-margin-top: 138px; }
 .footer-inner { grid-template-columns: 230px minmax(0,1fr) auto; gap: 45px; }
 .footer-brand img { width: 100px; height: auto; }
 .footer-disclosure p { font-size: 13px; line-height: 1.7; }
+.site-footer .footer-inner, .site-footer .footer-disclosure p { color: #e9dfd3; }
 .footer-tagline { font-size: 20px; }
 .brand-authorship { font-size: 12px; color: #d1c9c0; }
 
