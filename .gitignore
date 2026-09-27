@@ -40,3 +40,5 @@ next-env.d.ts
 
 # Local design review artifacts
 /.review/
+
+/.test-output/

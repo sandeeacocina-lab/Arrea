@@ -60,24 +60,5 @@ export const packages = [
 ] as const;
 
 export function inquiryUrl(packageName?: string) {
-  const subject = packageName
-    ? `Consulta sobre el paquete ${packageName} · ARREA`
-    : 'Propuesta para un evento · ARREA';
-  const body = [
-    'Hola, ARREA:',
-    '',
-    packageName
-      ? `Me interesa el paquete ${packageName}.`
-      : 'Me gustaría recibir una propuesta para un evento.',
-    '',
-    'Empresa:',
-    'Objetivo del evento:',
-    'Fecha prevista:',
-    'Número de asistentes:',
-    'Presupuesto orientativo:',
-    'Otras necesidades:',
-    '',
-    'Gracias.',
-  ].join('\n');
-  return `${contactUrl}?${new URLSearchParams({ subject, body })}`;
+ return packageName?`${contactUrl}?${new URLSearchParams({paquete:packageName})}`:contactUrl;
 }

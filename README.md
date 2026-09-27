@@ -4,7 +4,11 @@ Nueva web de Arrea Eventos, la empresa simulada de Asistencia a la Dirección de
 
 La web presenta ARREA como una agencia de eventos empresariales: servicios, paquetes comerciales, forma de trabajo y contacto. El pie identifica su finalidad educativa y el uso de inteligencia artificial.
 
-La página `/paquetes/` compara Impulso, Encuentro y Conexión, con precios de referencia, inclusiones y límites. Todos los enlaces comerciales de contacto abren el formulario de ARREA en la Central de Simulación. Las consultas de paquetes conservan el asunto y los datos del evento por completar. Al enviar el formulario, el mensaje y sus adjuntos llegan al buzón compartido de prácticas; no se envían correos reales. Solo se deben utilizar datos ficticios.
+La página `/paquetes/` compara Impulso, Encuentro y Conexión, con precios de referencia, inclusiones y límites. Los enlaces comerciales abren `/briefing/` dentro de la web. Si se llega desde un paquete, se conserva su nombre en las observaciones. El formulario recoge contacto, evento, públicos, recursos, presupuesto, objetivos, riesgos y accesibilidad. Solo se deben utilizar datos ficticios.
+
+**Enviar briefing a ARREA** genera un PDF corporativo con Geist, reúne las respuestas y las envía a `https://central.sandramangas.com/api/contacto?company=arrea`. Se guardan como correo recibido en el buzón compartido `info@arrea.test`, con el PDF adjunto. No se envía correo real. **Descargar en PDF** guarda una copia sin enviar. La confirmación solo se muestra cuando la central devuelve la referencia; los reintentos con el mismo contenido reutilizan el identificador y el archivo para evitar duplicados. Las respuestas no se conservan al cerrar la página.
+
+La central permite exclusivamente los orígenes corporativos aprobados para la recepción pública. La API de edición de correos no admite esos orígenes externos. Pruebas de esquema y PDF: `node tests/briefing.mjs`. Las fuentes incrustadas conservan su licencia en `public/fonts/Geist-LICENSE.txt`.
 
 El archivo conserva los proyectos anteriores, sus páginas, materiales y autorías.
 
