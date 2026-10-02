@@ -30,7 +30,7 @@ async function collectHtmlFiles(directory) {
 
 // Localise the exported document language and provide complete ES/EN links
 // before hydration, including on direct visits and with JavaScript disabled.
-const publicOrigin = 'https://sandeeacocina-lab.github.io';
+const publicOrigin = process.env.NEXT_PUBLIC_SITE_ORIGIN ?? 'https://sandeeacocina-lab.github.io';
 for (const source of await collectHtmlFiles(outputDirectory)) {
   const relativePage = relative(outputDirectory, source).replaceAll('\\', '/');
   if (relativePage === '404.html') continue;

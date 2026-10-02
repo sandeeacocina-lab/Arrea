@@ -33,16 +33,17 @@ jobs:
           cache: pnpm
 
       - name: Preparar GitHub Pages
+        id: pages
         uses: actions/configure-pages@v5
 
       - name: Calcular la dirección pública
         shell: bash
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          PAGES_ORIGIN: ${{ steps.pages.outputs.origin }}
         run: |
-          if [ "${{ github.event.repository.name }}" = "${{ github.repository_owner }}.github.io" ]; then
-            echo "NEXT_PUBLIC_BASE_PATH=" >> "$GITHUB_ENV"
-          else
-            echo "NEXT_PUBLIC_BASE_PATH=/${{ github.event.repository.name }}" >> "$GITHUB_ENV"
-          fi
+          echo "NEXT_PUBLIC_BASE_PATH=$PAGES_BASE_PATH" >> "$GITHUB_ENV"
+          echo "NEXT_PUBLIC_SITE_ORIGIN=$PAGES_ORIGIN" >> "$GITHUB_ENV"
 
       - name: Instalar dependencias
         run: pnpm install --frozen-lockfile
