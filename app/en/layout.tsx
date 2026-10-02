@@ -3,7 +3,7 @@ import { basePath } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: {
-    default: 'ARREA Eventos | One point of contact, your entire event',
+    default: 'One point of contact, your entire event',
     template: '%s | ARREA Eventos',
   },
   description: 'ARREA Eventos. Business event management, coordination and communication in Valladolid. One point of contact, your entire event.',
