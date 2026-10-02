@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { projectDossiers } from '../lib/project-dossiers.ts';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-const origin = 'https://sandeeacocina-lab.github.io';
+const origin = process.env.NEXT_PUBLIC_SITE_ORIGIN ?? 'https://sandeeacocina-lab.github.io';
 const output = join(process.cwd(), 'dist/client');
 const expected = {
   expods: { media: 8, photos: 4, social: '/images/projects/expods/exposicion.jpeg' },
