@@ -56,6 +56,9 @@ jobs:
       - name: Comprobar materiales de los proyectos
         run: node --experimental-strip-types scripts/check-project-dossiers.mjs
 
+      - name: Comprobar versiones ES y EN
+        run: node --experimental-strip-types scripts/check-languages.mjs
+
       - name: Empaquetar la web
         uses: actions/upload-pages-artifact@v4
         with:
@@ -71,3 +74,4 @@ jobs:
       - name: Publicar
         id: deployment
         uses: actions/deploy-pages@v4
+

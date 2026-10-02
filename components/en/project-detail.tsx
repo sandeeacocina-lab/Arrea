@@ -1,9 +1,9 @@
-import { SiteFooter } from '@/components/site-footer';
-import { SiteHeader } from '@/components/site-header';
-import { ProjectDossier } from '@/components/project-dossier';
-import { projectDossiers } from '@/lib/project-dossiers';
-import type { Project } from '@/lib/projects';
-import { basePath } from '@/lib/site';
+import { SiteFooter } from '@/components/en/site-footer';
+import { SiteHeader } from '@/components/en/site-header';
+import { ProjectDossier } from '@/components/en/project-dossier';
+import { projectDossiers } from '@/lib/en/project-dossiers';
+import type { Project } from '@/lib/en/projects';
+import { basePath } from '@/lib/en/site';
 
 type ProjectDetailProps = {
   project: Project;
@@ -15,12 +15,12 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
 
   return (
     <>
-      <a className="skip-link" href="#contenido">Saltar al contenido</a>
+      <a className="skip-link" href="#contenido">Skip to content</a>
       <SiteHeader active="proyectos" pagePath={`/proyectos/${project.slug}/`} />
       <main id="contenido" className={`project-detail-page project-${project.theme}`}>
         <header className="project-detail-hero">
           <div className="shell project-breadcrumb">
-            <a href={`${basePath}/proyectos/`}>Todos los proyectos</a>
+            <a href={`${basePath}/en/proyectos/`}>All projects</a>
             <span>{project.code}</span>
           </div>
           <div className="shell project-detail-hero-grid">
@@ -37,17 +37,17 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
             </div>
           </div>
           <dl className="shell project-facts" data-reveal>
-            <div><dt>Año</dt><dd>{project.year}</dd></div>
-            <div><dt>Formato</dt><dd>{project.category}</dd></div>
-            <div><dt>Lugar</dt><dd>{project.location}</dd></div>
-            <div><dt>Estado</dt><dd>{project.status}</dd></div>
+            <div><dt>Year</dt><dd>{project.year}</dd></div>
+            <div><dt>Format</dt><dd>{project.category}</dd></div>
+            <div><dt>Location</dt><dd>{project.location}</dd></div>
+            <div><dt>Status</dt><dd>{project.status}</dd></div>
           </dl>
           {dossier && (
-            <nav className="shell dossier-nav" aria-label="En esta ficha de proyecto">
-              <a href="#experiencia">Explorar los materiales</a>
-              <a href="#historia">Historia del proyecto</a>
-              <a href="#galeria">Fotografías</a>
-              <a href="#fuentes">Webs y fuentes</a>
+            <nav className="shell dossier-nav" aria-label="On this project page">
+              <a href="#experiencia">Explore the materials</a>
+              <a href="#historia">The project story</a>
+              <a href="#galeria">Photographs</a>
+              <a href="#fuentes">Websites and sources</a>
             </nav>
           )}
         </header>
@@ -55,13 +55,13 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         {dossier ? <ProjectDossier dossier={dossier} /> : <>
         <section className="project-narrative">
           <div className="shell narrative-grid" data-reveal>
-            <p className="detail-label">01 / Punto de partida</p>
+            <p className="detail-label">01 / Starting point</p>
             <div>
-              <h2>El proyecto</h2>
+              <h2>The project</h2>
               <p>{project.context}</p>
             </div>
             <div>
-              <h2>El reto</h2>
+              <h2>The challenge</h2>
               <p>{project.challenge}</p>
             </div>
           </div>
@@ -69,8 +69,8 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
 
         <section className="shell project-detail-section" data-reveal>
           <header>
-            <p className="detail-label">02 / Alcance</p>
-            <h2>Un encargo con <span className="heading-accent">muchas piezas.</span></h2>
+            <p className="detail-label">02 / Scope</p>
+            <h2>One brief, <span className="heading-accent">many parts.</span></h2>
           </header>
           <ol className="scope-list">
             {project.scope.map((item, index) => (
@@ -82,8 +82,8 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         <section className="project-work-section">
           <div className="shell project-work-grid" data-reveal>
             <header>
-              <p className="detail-label">03 / Trabajo desarrollado</p>
-              <h2>Del plan a los <span className="heading-accent">entregables.</span></h2>
+              <p className="detail-label">03 / Work completed</p>
+              <h2>From the plan to the <span className="heading-accent">deliverables.</span></h2>
             </header>
             <ul>
               {project.work.map((item) => <li key={item}>{item}</li>)}
@@ -93,8 +93,8 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
 
         <section className="shell project-detail-section process-section" data-reveal>
           <header>
-            <p className="detail-label">04 / Proceso</p>
-            <h2>Una idea que toma <span className="heading-accent">forma por etapas.</span></h2>
+            <p className="detail-label">04 / Process</p>
+            <h2>An idea taking <span className="heading-accent">shape, step by step.</span></h2>
           </header>
           <ol className="phase-grid">
             {project.phases.map((phase, index) => (
@@ -111,8 +111,8 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         <section className="learning-record">
           <div className="shell learning-record-grid" data-reveal>
             <header>
-              <p className="detail-label">{dossier ? 'Aprendizaje profesional' : '05 / Aprendizaje profesional'}</p>
-              <h2>Competencias que salen <span className="heading-accent">del papel.</span></h2>
+              <p className="detail-label">{dossier ? 'Professional learning' : '05 / Professional learning'}</p>
+              <h2>Skills brought <span className="heading-accent">to life.</span></h2>
             </header>
             <ul>
               {project.learning.map((item) => <li key={item}>{item}</li>)}
@@ -123,8 +123,8 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
         <section id="fuentes" className="project-sources">
           <div className="shell project-sources-grid" data-reveal>
             <div>
-              <p className="eyebrow">Material del proyecto</p>
-              <h2>{project.sources.length > 0 ? 'Seguir explorando.' : 'Archivo en construcción.'}</h2>
+              <p className="eyebrow">Project materials</p>
+              <h2>{project.sources.length > 0 ? 'Keep exploring.' : 'Archive in progress.'}</h2>
             </div>
             {project.sources.length > 0 ? (
               <div className="source-links">
@@ -136,16 +136,15 @@ export function ProjectDetail({ project, nextProject }: ProjectDetailProps) {
               </div>
             ) : (
               <p className="source-note">
-                Incorporaremos evidencias y documentación cuando hayan sido revisadas y autorizadas
-                para su publicación.
+                We will add evidence and documentation once they have been reviewed and approved for publication.
               </p>
             )}
           </div>
         </section>
 
-        <nav className="next-project" aria-label="Siguiente proyecto">
-          <a href={`${basePath}/proyectos/${nextProject.slug}/`} className="shell">
-            <span>Siguiente proyecto</span>
+        <nav className="next-project" aria-label="Next project">
+          <a href={`${basePath}/en/proyectos/${nextProject.slug}/`} className="shell">
+            <span>Next project</span>
             <strong>{nextProject.title}</strong>
           </a>
         </nav>

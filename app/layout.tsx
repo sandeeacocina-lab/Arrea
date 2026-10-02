@@ -6,6 +6,8 @@ import { MotionController } from '@/components/motion-controller';
 
 import './globals.css';
 import './identity-preview.css';
+import './languages.css';
+import { LanguagePreference } from '@/components/language-switcher';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
@@ -58,10 +60,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <LanguagePreference />
         <MotionController />
         {children}
         {createElement('tavus-widget', {
@@ -72,3 +75,4 @@ export default function RootLayout({
     </html>
   );
 }
+

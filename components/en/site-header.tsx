@@ -1,6 +1,6 @@
 import { LanguageSwitcher } from '@/components/language-switcher';
 /* oxlint-disable next/no-img-element -- Use the approved vector logo on static GitHub Pages. */
-import { basePath, contactUrl } from '@/lib/site';
+import { basePath, contactUrl } from '@/lib/en/site';
 
 export function SiteHeader({
   home = false,
@@ -11,66 +11,66 @@ export function SiteHeader({
   pagePath?: string;
   active?: 'paquetes' | 'proyectos' | 'quienes-somos';
 }) {
-  const homeLink = home ? '' : `${basePath}/`;
+  const homeLink = home ? '' : `${basePath}/en/`;
   return (
     <header className="site-header">
       <div className="shell header-inner">
         <a
-          href={`${basePath}/`}
-          aria-label="Arrea Eventos, inicio"
+          href={`${basePath}/en/`}
+          aria-label="Arrea Eventos, home"
           className="brand-link"
         >
           <img src={`${basePath}/images/arrea-identidad-principal.svg`} alt="ARREA Eventos" width={460} height={432} />
         </a>
 
-        <nav className="desktop-nav" aria-label="Navegación principal">
-          <a href={`${homeLink}#servicios`}>Servicios</a>
+        <nav className="desktop-nav" aria-label="Main navigation">
+          <a href={`${homeLink}#servicios`}>Services</a>
           <a
-            href={`${basePath}/paquetes/`}
+            href={`${basePath}/en/paquetes/`}
             aria-current={active === 'paquetes' ? 'page' : undefined}
           >
-            Paquetes
+            Packages
           </a>
           <a
-            href={`${basePath}/proyectos/`}
+            href={`${basePath}/en/proyectos/`}
             aria-current={active === 'proyectos' ? 'page' : undefined}
           >
-            Proyectos
+            Projects
           </a>
-          <a href={`${homeLink}#aula`}>Cómo trabajamos</a>
+          <a href={`${homeLink}#aula`}>How we work</a>
           <a
-            href={`${basePath}/quienes-somos/`}
+            href={`${basePath}/en/quienes-somos/`}
             aria-current={active === 'quienes-somos' ? 'page' : undefined}
           >
-            Quiénes somos
+            About us
           </a>
         </nav>
 
         <a href={contactUrl} className="header-cta">
-          Cuéntanos tu idea
+          Tell us your idea
         </a>
 
-        <LanguageSwitcher path={pagePath ?? (active ? `/${active}/` : '/')} locale="es" />
+        <LanguageSwitcher path={pagePath ?? (active ? `/${active}/` : '/')} locale="en" />
 
         <details className="mobile-menu">
-          <summary aria-label="Abrir menú">Menú</summary>
-          <nav aria-label="Navegación móvil">
-            <a href={`${homeLink}#servicios`}>Servicios</a>
+          <summary aria-label="Open menu">Menu</summary>
+          <nav aria-label="Mobile navigation">
+            <a href={`${homeLink}#servicios`}>Services</a>
             <a
-              href={`${basePath}/paquetes/`}
+              href={`${basePath}/en/paquetes/`}
               aria-current={active === 'paquetes' ? 'page' : undefined}
             >
-              Paquetes
+              Packages
             </a>
-            <a href={`${basePath}/proyectos/`} aria-current={active === 'proyectos' ? 'page' : undefined}>Proyectos</a>
-            <a href={`${homeLink}#aula`}>Cómo trabajamos</a>
+            <a href={`${basePath}/en/proyectos/`} aria-current={active === 'proyectos' ? 'page' : undefined}>Projects</a>
+            <a href={`${homeLink}#aula`}>How we work</a>
             <a
-              href={`${basePath}/quienes-somos/`}
+              href={`${basePath}/en/quienes-somos/`}
               aria-current={active === 'quienes-somos' ? 'page' : undefined}
             >
-              Quiénes somos
+              About us
             </a>
-            <a href={contactUrl}>Contacto</a>
+            <a href={contactUrl}>Contact</a>
           </nav>
         </details>
       </div>

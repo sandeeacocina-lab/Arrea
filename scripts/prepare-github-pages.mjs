@@ -1,4 +1,4 @@
-import { copyFile, cp, mkdir, readdir, readFile, stat } from 'node:fs/promises';
+import { copyFile, cp, mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import { basename, dirname, join, relative, resolve } from 'node:path';
 
 const outputDirectory = join(process.cwd(), 'dist', 'client');
@@ -26,6 +26,26 @@ async function collectHtmlFiles(directory) {
   }
 
   return files;
+}
+
+// Localise the exported document language and provide complete ES/EN links
+// before hydration, including on direct visits and with JavaScript disabled.
+const publicOrigin = 'https://sandeeacocina-lab.github.io';
+for (const source of await collectHtmlFiles(outputDirectory)) {
+  const relativePage = relative(outputDirectory, source).replaceAll('\\', '/');
+  if (relativePage === '404.html') continue;
+  const route = '/' + relativePage.replace(/(?:^|\/)index\.html$/, '/').replace(/\.html$/, '/').replace(/^\//, '');
+  const english = /^\/en(?:\/|$)/.test(route);
+  const spanishRoute = route.replace(/^\/en(?=\/|$)/, '') || '/';
+  const spanishUrl = `${basePath}${spanishRoute}`;
+  const englishUrl = `${basePath}/en${spanishRoute}`;
+  let html = await readFile(source, 'utf8');
+  html = html.replace(/<html([^>]*?)lang="[^"]*"/, `<html$1lang="${english ? 'en' : 'es'}"`);
+  html = html.replace(/(<nav[^>]*class="language-switcher"[^>]*>)([\s\S]*?)(<\/nav>)/g, (_, start, content, end) => {
+    return start + content.replace(/<a\b[^>]*>/g, (tag) => tag.replace(/href="[^"]*"/, `href="${tag.includes('hreflang="en"') || tag.includes('hrefLang="en"') ? englishUrl : spanishUrl}"`)) + end;
+  });
+  html = html.replace('</head>', `<link rel="alternate" hreflang="es" href="${publicOrigin}${spanishUrl}"/><link rel="alternate" hreflang="en" href="${publicOrigin}${englishUrl}"/></head>`);
+  await writeFile(source, html);
 }
 
 for (const source of await collectHtmlFiles(outputDirectory)) {
@@ -65,3 +85,4 @@ for (const page of await collectHtmlFiles(outputDirectory)) {
 }
 
 console.log(`GitHub Pages ready: ${checkedPaths.size} local URLs checked.`);
+

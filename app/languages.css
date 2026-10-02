@@ -1,0 +1,26 @@
+/* A compact language control remains visible outside the mobile menu. */
+.header-inner { grid-template-columns: 120px minmax(0, 1fr) auto auto; gap: 18px; }
+.language-switcher { display: inline-flex; align-items: center; border: 1px solid #d6ccc1; border-radius: 2px; padding: 2px; justify-self: end; }
+.language-switcher a { display: grid; place-items: center; min-width: 38px; min-height: 40px; padding: 6px; color: #15120f; font-size: 12px; line-height: 1; font-weight: 700; text-decoration: none; }
+.language-switcher a[aria-current] { color: #fff; background: #15120f; }
+.language-switcher a:not([aria-current]):hover { color: #d40057; background: #e9dfd3; }
+.language-switcher a:focus-visible { outline: 2px solid #d40057; outline-offset: 3px; }
+@media (max-width: 1150px) {
+  .header-inner { grid-template-columns: 120px 1fr auto auto; }
+  .desktop-nav { display: none; }
+  .mobile-menu { display: block; grid-column: 4; }
+  .header-cta { justify-self: end; }
+}
+@media (max-width: 700px) {
+  .header-inner { grid-template-columns: 100px minmax(0, 1fr) auto; gap: 12px; }
+  .brand-link { width: 100px; }
+  .brand-link img { width: 80px; }
+  .header-cta { display: none; }
+  .language-switcher { grid-column: 2; grid-row: 1; }
+  .mobile-menu { grid-column: 3; grid-row: 1; }
+  .language-switcher a { min-width: 36px; min-height: 40px; }
+}
+html[lang='en'] .cinema-copy h1 { font-size: clamp(46px, 5.8vw, 88px); }
+@media (max-width: 700px) {
+  html[lang='en'] .cinema-copy h1 { font-size: clamp(36px, 9.4vw, 60px); }
+}
