@@ -77,7 +77,10 @@ for (const page of await collectHtmlFiles(outputDirectory)) {
     }
     if (checkedPaths.has(target)) continue;
     const file = await stat(target);
-    if (!file.isFile() || file.size === 0) {
+    // A fully tree-shaken JavaScript chunk is a valid empty module (for
+    // example lib/site.ts when the custom-domain base path is empty).
+    const emptyModule = /(?:^|\/)\_next\/static\/chunks\/[^/]+\.js$/.test(localPath);
+    if (!file.isFile() || (file.size === 0 && !emptyModule)) {
       throw new Error(`Missing or empty public file: ${pathname}`);
     }
     checkedPaths.add(target);
@@ -85,4 +88,3 @@ for (const page of await collectHtmlFiles(outputDirectory)) {
 }
 
 console.log(`GitHub Pages ready: ${checkedPaths.size} local URLs checked.`);
-
