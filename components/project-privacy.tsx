@@ -14,7 +14,7 @@ export function ProjectPrivacy({ locale = 'es' }: { locale?: 'es' | 'en' }) {
         <p>{en
           ? 'ARREA Eventos is a practice enterprise within the Management Assistance programme at IES Arca Real in Valladolid. This website is used for learning activities, not to accept real commercial enquiries. Its fictional team and AI-generated content form part of the simulation.'
           : 'ARREA Eventos es una empresa simulada del ciclo de Asistencia a la Dirección del IES Arca Real de Valladolid. Esta web se utiliza para actividades de aprendizaje y no atiende solicitudes comerciales reales. El equipo ficticio y los contenidos generados con inteligencia artificial forman parte de la simulación.'}</p>
-        <p>{en ? 'Author and educational lead: Sandra Mangas Hernández.' : 'Autoría y dirección pedagógica: Sandra Mangas Hernández.'}</p>
+        <p>{en ? 'Author and educational lead: Sandra Mangas.' : 'Autoría y dirección pedagógica: Sandra Mangas.'}</p>
         <p>{en ? 'School: IES Arca Real, Calle General Shelly, 1, 47013 Valladolid. ' : 'Centro educativo: IES Arca Real, Calle General Shelly, 1, 47013 Valladolid. '}
           <a href="https://iesarcareal.es/contacto/">{en ? 'Official school contact page' : 'Contacto oficial del centro'}</a>.
         </p>
@@ -25,8 +25,8 @@ export function ProjectPrivacy({ locale = 'es' }: { locale?: 'es' | 'en' }) {
         <h2 id="form-title">{en ? 'The brief and the shared inbox' : 'El briefing y el buzón compartido'}</h2>
         <p>{simulationNotice[locale]}</p>
         <p>{en
-          ? 'Submitting the form sends the answers and the PDF generated in your browser to ARREA’s shared inbox in the Simulation Hub at central.sandramangas.com, identified there as info@arrea.test. Downloading the PDF alone does not send the form. Your answers are not saved by this page when you close it.'
-          : 'Al enviar el formulario se remiten las respuestas y el PDF generado en tu navegador al buzón compartido de ARREA en la Central de Simulación, alojada en central.sandramangas.com e identificado allí como info@arrea.test. Descargar únicamente el PDF no envía el formulario. Esta página no guarda tus respuestas cuando la cierras.'}</p>
+          ? 'Submitting the form sends the answers and the PDF generated in your browser to ARREA’s shared inbox in the Simulation Hub, identified there as info@arrea.test. Downloading the PDF alone does not send the form. Your answers are not saved by this page when you close it.'
+          : 'Al enviar el formulario se remiten las respuestas y el PDF generado en tu navegador al buzón compartido de ARREA en la Central de Simulación, identificado allí como info@arrea.test. Descargar únicamente el PDF no envía el formulario. Esta página no guarda tus respuestas cuando la cierras.'}</p>
         <p>{en
           ? 'All fields must contain fictional details, including names, telephone numbers and free text. Requiring an email ending in .test does not by itself make the other information anonymous.'
           : 'Todos los campos deben contener datos ficticios, incluidos los nombres, teléfonos y textos libres. Exigir un correo terminado en .test no convierte por sí solo el resto de la información en anónima.'}</p>
@@ -52,10 +52,18 @@ export function ProjectPrivacy({ locale = 'es' }: { locale?: 'es' | 'en' }) {
         <p>{en
           ? 'Tavus software includes cookies and local storage functions, whose use depends on the service’s settings and your interaction. Use only fictional situations and details with the assistant. Voice and images can identify you; avoid enabling your microphone or camera if you do not wish to share them with the provider.'
           : 'El software de Tavus incluye funciones de cookies y almacenamiento local, cuyo uso depende de la configuración del servicio y de la interacción. Utiliza solo situaciones y datos ficticios con el asistente. La voz y la imagen pueden identificarte: evita activar el micrófono o la cámara si no deseas compartirlos con el proveedor.'}</p>
+        <p>{en
+          ? 'The configuration reviewed has per-visitor memory enabled. Tavus uses an identifier in local storage to associate conversations from the same browser. Clearing browser data does not itself request deletion of conversations held by the provider.'
+          : 'La configuración revisada tiene activada la memoria por visitante. Tavus utiliza un identificador en el almacenamiento local para asociar conversaciones de un mismo navegador. Borrar los datos del navegador no solicita por sí solo el borrado de las conversaciones que conserve el proveedor.'}</p>
+        <p>{en
+          ? 'Tavus states that its service is not intended for people under 18 and that personal information may be processed in the United States. Its general privacy policy excludes information processed on behalf of business customers; that processing is governed by the applicable agreements with those customers.'
+          : 'Tavus indica que su servicio no está destinado a menores de 18 años y que la información personal puede tratarse en Estados Unidos. Su política general de privacidad excluye los datos tratados por cuenta de clientes empresariales; ese tratamiento se rige por los acuerdos aplicables con dichos clientes.'}</p>
         <p>
           <a href="https://docs.tavus.io/sections/deployments/widget">{en ? 'How the Tavus widget works' : 'Funcionamiento del widget de Tavus'}</a>
           {' · '}
           <a href="https://www.tavus.io/privacy-policy">{en ? 'Tavus general privacy policy' : 'Política general de privacidad de Tavus'}</a>
+          {' · '}
+          <a href="https://www.tavus.io/terms-of-service">{en ? 'Tavus platform terms' : 'Condiciones de la plataforma Tavus'}</a>
         </p>
         <p>{en
           ? 'Project pages also offer embedded content from Genially, ThingLink and YouTube. This content loads when you select its “Load” button; until then, a preview hosted on this website is shown. Loading the content or opening the original connects you to the external provider, which may use cookies and process technical data under its own policies.'
