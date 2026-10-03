@@ -39,6 +39,7 @@ export function SiteFooter({ showContact = false }: { showContact?: boolean }) {
             Los proyectos históricos conservan sus referencias y autorías
             correspondientes.
           </p>
+          <p><a href={`${basePath}/privacidad/`}> Información del proyecto y privacidad</a></p>
           <p className="footer-school">
             Centro educativo: C/ General Shelly, 1 · Valladolid ·{' '}
             <a href="tel:+34983220818">983 22 08 18</a>

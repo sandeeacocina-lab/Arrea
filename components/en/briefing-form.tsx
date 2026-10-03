@@ -4,6 +4,7 @@ import {briefingSections,briefingMessage,exampleBriefing,validateBriefing,CONTAC
 import {Input} from '@/components/ui/input';
 import {Textarea} from '@/components/ui/textarea';
 import {Button} from '@/components/ui/button';
+import {SimulationNotice} from '@/components/simulation-notice';
 
 export default function BriefingForm(){
  const [values,setValues]=useState<BriefingValues>({}),[consent,setConsent]=useState(false),[busy,setBusy]=useState(''),[error,setError]=useState(''),[reference,setReference]=useState(''),[website,setWebsite]=useState('');
@@ -26,7 +27,7 @@ export default function BriefingForm(){
   }catch(e){setError(e instanceof Error&&e.name!=='TypeError'&&e.name!=='TimeoutError'?e.message:'Submission could not be confirmed. Your answers and PDF have been kept. Select Send brief again; the same submission will not be duplicated.')}finally{lock.current=false;setBusy('')}
  }
  return <div className="briefing-content">
-  <p className="briefing-notice">Use fictional details only. The brief will go to the shared inbox <strong>info@arrea.test</strong> in the Simulation Hub. No real email is sent.</p>
+  <SimulationNotice locale="en"/>
   {reference?<div className="briefing-receipt" ref={receipt} tabIndex={-1} role="status"><p className="eyebrow">SUBMISSION CONFIRMED</p><h2>Your brief has reached ARREA.</h2><p>We have received your answers and the attached PDF.</p><p className="briefing-reference">Reference: {reference}</p><Button type="button" className="briefing-primary" disabled={!!busy} onClick={download}>{busy==='pdf'?'Preparing PDF…':'Download my PDF copy'}</Button><p><a href="https://central.sandramangas.com/empresa/arrea/servicios/correo">Open the practice inbox</a></p><Button type="button" variant="outline" disabled={!!busy} onClick={()=>{setValues({});setConsent(false);setReference('');setError('');snapshot.current=null}}>Prepare another brief</Button></div>:
   <form onSubmit={submit}>
    <div className="briefing-form-meta"><span>Fields marked * are required.</span><Button variant="outline" type="button" disabled={!!busy} onClick={()=>{if(Object.keys(values).length&&!confirm('Replace your answers with the fictional Nexo example?'))return;setValues({...exampleBriefing});setConsent(false);setError('');snapshot.current=null}}>Load fictional example</Button></div>

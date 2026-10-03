@@ -26,7 +26,7 @@ export const briefingSections = [
         "label": "Contact email",
         "type": "email",
         "required": true,
-        "help": "For practice, use a fictional email address ending in .test.",
+        "help": "Use only a fictional email address ending in .test.",
         "options": []
       },
       {
@@ -312,6 +312,7 @@ export function briefingText(values:BriefingValues,reference:string){
 export function validateBriefing(values:BriefingValues){
  for(const section of briefingSections)for(const field of section.fields){const value=values[field.id];if(field.required&&(!value||(Array.isArray(value)?!value.length:!value.trim())))return 'Complete “'+field.label+'”.';if(typeof value==='string'&&value.length>(field.type==='textarea'?650:180))return 'Check the length of “'+field.label+'”.';}
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(values.email)))return 'Enter a valid email address.';
+ if(!/\.test$/i.test(String(values.email)))return 'Use a fictional email address ending in .test.';
  if(String(values.email).length>120)return 'The email address can contain up to 120 characters.';
  if(!Number.isInteger(Number(values.personas))||Number(values.personas)<1||Number(values.personas)>100000)return 'Enter an attendee count between 1 and 100000.';
  if(!Number.isFinite(Number(values.presupuesto))||Number(values.presupuesto)<=0)return 'Enter a budget greater than zero.';

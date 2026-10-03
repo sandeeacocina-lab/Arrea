@@ -34,6 +34,7 @@ export function SiteFooter({ showContact = false }: { showContact?: boolean }) {
           <p>
             ARREA Eventos is a practice enterprise run within the Management Assistance programme at IES Arca Real in Valladolid. This website is for educational purposes and includes AI-generated text and images. The team is represented by fictional characters. Historical projects retain their original references and credits.
           </p>
+          <p><a href={`${basePath}/en/privacidad/`}> Project information and privacy</a></p>
           <p className="footer-school">
             School: C/ General Shelly, 1 · Valladolid ·{' '}
             <a href="tel:+34983220818">983 22 08 18</a>

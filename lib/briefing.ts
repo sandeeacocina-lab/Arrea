@@ -26,7 +26,7 @@ export const briefingSections = [
         "label": "Correo de contacto",
         "type": "email",
         "required": true,
-        "help": "En las pruebas, utiliza un correo ficticio acabado en .test.",
+        "help": "Utiliza únicamente un correo ficticio terminado en .test.",
         "options": []
       },
       {
@@ -312,6 +312,7 @@ export function briefingText(values:BriefingValues,reference:string){
 export function validateBriefing(values:BriefingValues){
  for(const section of briefingSections)for(const field of section.fields){const value=values[field.id];if(field.required&&(!value||(Array.isArray(value)?!value.length:!value.trim())))return 'Completa «'+field.label+'».';if(typeof value==='string'&&value.length>(field.type==='textarea'?650:180))return 'Revisa la longitud de «'+field.label+'».';}
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(values.email)))return 'Introduce un correo válido.';
+ if(!/\.test$/i.test(String(values.email)))return 'Utiliza un correo ficticio terminado en .test.';
  if(String(values.email).length>120)return 'El correo admite hasta 120 caracteres.';
  if(!Number.isInteger(Number(values.personas))||Number(values.personas)<1||Number(values.personas)>100000)return 'Indica un número de asistentes entre 1 y 100000.';
  if(!Number.isFinite(Number(values.presupuesto))||Number(values.presupuesto)<=0)return 'Indica un presupuesto mayor que cero.';

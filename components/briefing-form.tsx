@@ -4,6 +4,7 @@ import {briefingSections,briefingMessage,exampleBriefing,validateBriefing,CONTAC
 import {Input} from '@/components/ui/input';
 import {Textarea} from '@/components/ui/textarea';
 import {Button} from '@/components/ui/button';
+import {SimulationNotice} from '@/components/simulation-notice';
 
 export default function BriefingForm(){
  const [values,setValues]=useState<BriefingValues>({}),[consent,setConsent]=useState(false),[busy,setBusy]=useState(''),[error,setError]=useState(''),[reference,setReference]=useState(''),[website,setWebsite]=useState('');
@@ -26,7 +27,7 @@ export default function BriefingForm(){
   }catch(e){setError(e instanceof Error&&e.name!=='TypeError'&&e.name!=='TimeoutError'?e.message:'No se ha podido confirmar el envío. Tus respuestas y el PDF se conservan. Pulsa de nuevo Enviar briefing; el mismo envío no se duplicará.')}finally{lock.current=false;setBusy('')}
  }
  return <div className="briefing-content">
-  <p className="briefing-notice">Utiliza solo datos ficticios. El briefing llegará al buzón compartido <strong>info@arrea.test</strong> de la Central de Simulación. No se envía correo real.</p>
+  <SimulationNotice/>
   {reference?<div className="briefing-receipt" ref={receipt} tabIndex={-1} role="status"><p className="eyebrow">ENVÍO CONFIRMADO</p><h2>Tu briefing ya está en ARREA.</h2><p>Hemos recibido las respuestas y el PDF adjunto.</p><p className="briefing-reference">Referencia: {reference}</p><Button type="button" className="briefing-primary" disabled={!!busy} onClick={download}>{busy==='pdf'?'Preparando PDF…':'Descargar mi copia en PDF'}</Button><p><a href="https://central.sandramangas.com/empresa/arrea/servicios/correo">Abrir el buzón de prácticas</a></p><Button type="button" variant="outline" disabled={!!busy} onClick={()=>{setValues({});setConsent(false);setReference('');setError('');snapshot.current=null}}>Preparar otro briefing</Button></div>:
   <form onSubmit={submit}>
    <div className="briefing-form-meta"><span>Los campos con * son obligatorios.</span><Button variant="outline" type="button" disabled={!!busy} onClick={()=>{if(Object.keys(values).length&&!confirm('¿Sustituir lo escrito por el ejemplo ficticio Nexo?'))return;setValues({...exampleBriefing});setConsent(false);setError('');snapshot.current=null}}>Cargar ejemplo ficticio</Button></div>
