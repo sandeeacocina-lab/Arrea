@@ -45,25 +45,12 @@ export function ProjectPrivacy({ locale = 'es' }: { locale?: 'es' | 'en' }) {
       </section>
 
       <section aria-labelledby="services-title">
-        <h2 id="services-title">{en ? 'External services, cookies and the AI assistant' : 'Servicios externos, cookies y asistente de IA'}</h2>
+        <h2 id="services-title">{en ? 'External services and cookies' : 'Servicios externos y cookies'}</h2>
         <p>{en
-          ? 'The website includes a Tavus AI assistant. Its software is loaded automatically from the external provider UNPKG and connects to Tavus to load the assistant. This involves requests to external services even before you start a conversation.'
-          : 'La web incluye un asistente de inteligencia artificial de Tavus. Su software se carga automáticamente desde el proveedor externo UNPKG y se conecta con Tavus para cargar el asistente. Esto implica solicitudes a servicios externos incluso antes de iniciar una conversación.'}</p>
-        <p>{en
-          ? 'Tavus software includes cookies and local storage functions, whose use depends on the service’s settings and your interaction. Use only fictional situations and details with the assistant. Voice and images can identify you; avoid enabling your microphone or camera if you do not wish to share them with the provider.'
-          : 'El software de Tavus incluye funciones de cookies y almacenamiento local, cuyo uso depende de la configuración del servicio y de la interacción. Utiliza solo situaciones y datos ficticios con el asistente. La voz y la imagen pueden identificarte: evita activar el micrófono o la cámara si no deseas compartirlos con el proveedor.'}</p>
-        <p>{en
-          ? 'The configuration reviewed has per-visitor memory enabled. Tavus uses an identifier in local storage to associate conversations from the same browser. Clearing browser data does not itself request deletion of conversations held by the provider.'
-          : 'La configuración revisada tiene activada la memoria por visitante. Tavus utiliza un identificador en el almacenamiento local para asociar conversaciones de un mismo navegador. Borrar los datos del navegador no solicita por sí solo el borrado de las conversaciones que conserve el proveedor.'}</p>
-        <p>{en
-          ? 'Tavus states that its service is not intended for people under 18 and that personal information may be processed in the United States. Its general privacy policy excludes information processed on behalf of business customers; that processing is governed by the applicable agreements with those customers.'
-          : 'Tavus indica que su servicio no está destinado a menores de 18 años y que la información personal puede tratarse en Estados Unidos. Su política general de privacidad excluye los datos tratados por cuenta de clientes empresariales; ese tratamiento se rige por los acuerdos aplicables con dichos clientes.'}</p>
+          ? 'The Tavus assistant was removed on 3 October 2026. This version of the website no longer loads the assistant or its software. Removal from this website does not delete data that the provider may hold from earlier interactions.'
+          : 'El asistente de Tavus se retiró el 3 de octubre de 2026. Esta versión de la web ya no carga el asistente ni su software. Su retirada de esta web no elimina los datos que el proveedor pueda conservar de interacciones anteriores.'}</p>
         <p>
-          <a href="https://docs.tavus.io/sections/deployments/widget">{en ? 'How the Tavus widget works' : 'Funcionamiento del widget de Tavus'}</a>
-          {' · '}
-          <a href="https://www.tavus.io/privacy-policy">{en ? 'Tavus general privacy policy' : 'Política general de privacidad de Tavus'}</a>
-          {' · '}
-          <a href="https://www.tavus.io/terms-of-service">{en ? 'Tavus platform terms' : 'Condiciones de la plataforma Tavus'}</a>
+          <a href="https://www.tavus.io/privacy-policy">{en ? 'Tavus privacy information for previous interactions' : 'Información de privacidad de Tavus para interacciones anteriores'}</a>
         </p>
         <p>{en
           ? 'Project pages also offer embedded content from Genially, ThingLink and YouTube. This content loads when you select its “Load” button; until then, a preview hosted on this website is shown. Loading the content or opening the original connects you to the external provider, which may use cookies and process technical data under its own policies.'

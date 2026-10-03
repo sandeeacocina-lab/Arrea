@@ -38,6 +38,6 @@ for (const route of routes) for (const locale of ['es', 'en']) {
   assert.ok(navigation, `Missing language switcher: ${prefix}${route}`);
   assert.ok(navigation.includes(`href="${base}/${route}"`), `Missing Spanish equivalent: ${route}`);
   assert.ok(navigation.includes(`href="${base}/en/${route}"`), `Missing English equivalent: ${route}`);
-  assert.ok(html.includes('deployment-id="5080195d-53a4-4a30-918b-144970a31227"'), 'Tavus widget must remain present');
+  assert.ok(!html.includes('<tavus-widget') && !html.includes('@tavus/widget') && !html.includes('5080195d-53a4-4a30-918b-144970a31227'), 'Tavus widget and its script must be absent');
 }
-console.log('ES/EN: 20 pages, equivalent links, language attributes, fictional emails and briefing options checked.');
+console.log('ES/EN: 20 pages, equivalent links, language attributes, fictional emails, briefing options and removal of Tavus checked.');

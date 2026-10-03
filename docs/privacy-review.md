@@ -26,3 +26,8 @@ Consulta de solo lectura a la configuración pública de inicio del deployment e
 La página informativa refleja la memoria activada y advierte de que la política general indica que el servicio no se dirige a menores de 18 años y contempla tratamiento en EE. UU. Las cookies de marketing descritas para la web del proveedor no se atribuyen automáticamente al widget de ARREA.
 
 Condiciones consultadas: https://www.tavus.io/terms-of-service
+
+
+## Retirada de Tavus · 3 de octubre de 2026
+
+Sandra solicita expresamente retirar el widget. Se elimina de `app/layout.tsx` tanto el elemento `tavus-widget` como la carga de su script externo. Las comprobaciones de todas las páginas ES/EN pasan a exigir su ausencia. La información pública se actualiza para describir la retirada, sin prometer el borrado de datos de interacciones anteriores. Los hallazgos de la revisión previa de Tavus se conservan arriba como historial y ya no describen una integración activa. No se ha accedido a conversaciones ni eliminado datos de la cuenta Tavus.

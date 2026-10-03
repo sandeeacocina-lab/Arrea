@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { createElement } from 'react';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import { MotionController } from '@/components/motion-controller';
@@ -67,10 +66,6 @@ export default function RootLayout({
         <LanguagePreference />
         <MotionController />
         {children}
-        {createElement('tavus-widget', {
-          'deployment-id': '5080195d-53a4-4a30-918b-144970a31227',
-        })}
-        <script src="https://unpkg.com/@tavus/widget@latest" defer />
       </body>
     </html>
   );
