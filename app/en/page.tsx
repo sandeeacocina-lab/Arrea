@@ -2,6 +2,7 @@
 import { SiteFooter } from '@/components/en/site-footer';
 import { SiteHeader } from '@/components/en/site-header';
 import { basePath, contactUrl } from '@/lib/en/site';
+import { ArcaTalksTeaser } from '@/components/arca-talks';
 
 const services = [
   {
@@ -120,6 +121,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <ArcaTalksTeaser locale="en" />
         <section
           id="servicios"
           className="services-section section-space"

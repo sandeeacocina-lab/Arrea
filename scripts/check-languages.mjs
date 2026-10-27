@@ -29,7 +29,7 @@ assert.ok(validateEn({ ...enExample, presupuesto: '0' }).includes('budget'));
 assert.match(briefingText(enExample, 'translation-check'), /NEW EVENT BRIEF/);
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-const routes = ['', 'paquetes/', 'quienes-somos/', 'briefing/', 'privacidad/', 'proyectos/', 'proyectos/expods/', 'proyectos/feria-arcadeca-2022/', 'proyectos/arca-impulsa-fp/', 'proyectos/voces-que-inspiran/'];
+const routes = ['', 'paquetes/', 'quienes-somos/', 'briefing/', 'privacidad/', 'proyectos/', 'proyectos/expods/', 'proyectos/feria-arcadeca-2022/', 'proyectos/arca-impulsa-fp/', 'proyectos/voces-que-inspiran/', 'proyectos/arca-talks/'];
 for (const route of routes) for (const locale of ['es', 'en']) {
   const prefix = locale === 'en' ? 'en/' : '';
   const html = await readFile(join('dist/client', prefix, route, 'index.html'), 'utf8');
@@ -40,4 +40,4 @@ for (const route of routes) for (const locale of ['es', 'en']) {
   assert.ok(navigation.includes(`href="${base}/en/${route}"`), `Missing English equivalent: ${route}`);
   assert.ok(!html.includes('<tavus-widget') && !html.includes('@tavus/widget') && !html.includes('5080195d-53a4-4a30-918b-144970a31227'), 'Tavus widget and its script must be absent');
 }
-console.log('ES/EN: 20 pages, equivalent links, language attributes, fictional emails, briefing options and removal of Tavus checked.');
+console.log(`ES/EN: ${routes.length * 2} pages, equivalent links, language attributes, fictional emails, briefing options and removal of Tavus checked.`);

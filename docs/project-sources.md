@@ -49,3 +49,9 @@ Los dominios `expods.es` y `feriaarcadeca.es` muestran páginas de dominio en ve
 Ningún iframe ni vista previa remota se carga automáticamente. El visitante elige un material y pulsa el botón de carga para conectar con el proveedor. Los vídeos usan el dominio de inserción `youtube-nocookie.com`. Siempre se ofrece un enlace al original y la posibilidad de cerrar el contenido externo. Los enlaces contenidos dentro de las experiencias históricas quedan bajo el control de sus autores.
 
 Las propuestas «Para llevar a PES» son nuevas sugerencias de continuidad formativa, explícitamente diferenciadas de lo realizado en 2022.
+
+## ARCA TALKS 2027
+
+La información de las jornadas y sus fechas (21 y 22 de enero de 2027) procede de los proyectos «1º ADIR ARCA TALKS (1).pdf» y «1º GA ARCA TALKS (1).pdf», aportados por Sandra Mangas el 27 de octubre de 2026. La fotografía `public/images/arca-talks-centro.webp` se extrajo de la portada del proyecto de ADIR y se convirtió a WebP; no muestra el evento celebrado ni es una imagen generada.
+
+El programa detallado, los ponentes y los materiales permanecen pendientes de confirmar o publicar. ARREA figura en comunicación y contenidos. La nueva sección y sus accesos se añaden sin sustituir los proyectos históricos ni el contenido de la portada.

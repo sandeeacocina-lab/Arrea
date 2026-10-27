@@ -6,6 +6,7 @@ import { MotionController } from '@/components/motion-controller';
 import './globals.css';
 import './identity-preview.css';
 import './languages.css';
+import './arca-talks.css';
 import { LanguagePreference } from '@/components/language-switcher';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';

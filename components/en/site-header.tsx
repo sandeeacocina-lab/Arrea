@@ -9,7 +9,7 @@ export function SiteHeader({
 }: {
   home?: boolean;
   pagePath?: string;
-  active?: 'paquetes' | 'proyectos' | 'quienes-somos';
+  active?: 'paquetes' | 'proyectos' | 'quienes-somos' | 'arca-talks';
 }) {
   const homeLink = home ? '' : `${basePath}/en/`;
   return (
@@ -44,6 +44,7 @@ export function SiteHeader({
           >
             About us
           </a>
+          <a href={`${basePath}/en/proyectos/arca-talks/`} className="nav-arca-talks" aria-current={active === 'arca-talks' ? 'page' : undefined}>ARCA TALKS</a>
         </nav>
 
         <a href={contactUrl} className="header-cta">
@@ -70,6 +71,7 @@ export function SiteHeader({
             >
               About us
             </a>
+            <a href={`${basePath}/en/proyectos/arca-talks/`} className="nav-arca-talks" aria-current={active === 'arca-talks' ? 'page' : undefined}>ARCA TALKS</a>
             <a href={contactUrl}>Contact</a>
           </nav>
         </details>

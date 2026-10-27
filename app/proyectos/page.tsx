@@ -4,6 +4,7 @@ import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 import { projects } from '@/lib/projects';
 import { basePath } from '@/lib/site';
+import { ArcaTalksTeaser } from '@/components/arca-talks';
 
 export const metadata: Metadata = {
   title: 'Proyectos',
@@ -45,6 +46,7 @@ export default function ProjectsPage() {
           </div>
         </section>
 
+        <ArcaTalksTeaser />
         <section
           className="project-index-section section-space"
           aria-labelledby="project-list-title"
